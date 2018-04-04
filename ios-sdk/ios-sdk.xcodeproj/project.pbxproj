@@ -10,6 +10,9 @@
 		CE238BDB2074206F00CD04DD /* ios_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE238BD12074206F00CD04DD /* ios_sdk.framework */; };
 		CE238BE02074206F00CD04DD /* ios_sdkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE238BDF2074206F00CD04DD /* ios_sdkTests.swift */; };
 		CE238BE22074206F00CD04DD /* ios_sdk.h in Headers */ = {isa = PBXBuildFile; fileRef = CE238BD42074206F00CD04DD /* ios_sdk.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE238C272074321700CD04DD /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE238C262074321700CD04DD /* Instrument.swift */; };
+		CE238C2C20743A0300CD04DD /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE238C2B20743A0300CD04DD /* HttpClient.swift */; };
+		CE238C2E20743C2F00CD04DD /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE238C2D20743C2F00CD04DD /* Config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,9 @@
 		CE238BDA2074206F00CD04DD /* ios-sdkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-sdkTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE238BDF2074206F00CD04DD /* ios_sdkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_sdkTests.swift; sourceTree = "<group>"; };
 		CE238BE12074206F00CD04DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE238C262074321700CD04DD /* Instrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
+		CE238C2B20743A0300CD04DD /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		CE238C2D20743C2F00CD04DD /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +77,11 @@
 		CE238BD32074206F00CD04DD /* ios-sdk */ = {
 			isa = PBXGroup;
 			children = (
+				CE238C282074328D00CD04DD /* https */,
+				CE238C2520742F4100CD04DD /* model */,
 				CE238BD42074206F00CD04DD /* ios_sdk.h */,
 				CE238BD52074206F00CD04DD /* Info.plist */,
+				CE238C2D20743C2F00CD04DD /* Config.swift */,
 			);
 			path = "ios-sdk";
 			sourceTree = "<group>";
@@ -84,6 +93,22 @@
 				CE238BE12074206F00CD04DD /* Info.plist */,
 			);
 			path = "ios-sdkTests";
+			sourceTree = "<group>";
+		};
+		CE238C2520742F4100CD04DD /* model */ = {
+			isa = PBXGroup;
+			children = (
+				CE238C262074321700CD04DD /* Instrument.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		CE238C282074328D00CD04DD /* https */ = {
+			isa = PBXGroup;
+			children = (
+				CE238C2B20743A0300CD04DD /* HttpClient.swift */,
+			);
+			path = https;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +173,7 @@
 				TargetAttributes = {
 					CE238BD02074206F00CD04DD = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 					CE238BD92074206F00CD04DD = {
 						CreatedOnToolsVersion = 9.3;
@@ -194,6 +220,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE238C2C20743A0300CD04DD /* HttpClient.swift in Sources */,
+				CE238C272074321700CD04DD /* Instrument.swift in Sources */,
+				CE238C2E20743C2F00CD04DD /* Config.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +368,7 @@
 		CE238BE62074206F00CD04DD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
@@ -357,6 +387,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -365,6 +396,7 @@
 		CE238BE72074206F00CD04DD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
@@ -391,6 +423,7 @@
 		CE238BE92074206F00CD04DD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "ios-sdkTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -408,6 +441,7 @@
 		CE238BEA2074206F00CD04DD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "ios-sdkTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
