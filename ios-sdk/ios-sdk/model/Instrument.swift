@@ -11,6 +11,8 @@ import Foundation
 struct Instrument: Codable {
     var type : String
     var number : String
+    var security_code : String
     var expiration_month : Int
     var expiration_year : Int
+    var address : Address
 }

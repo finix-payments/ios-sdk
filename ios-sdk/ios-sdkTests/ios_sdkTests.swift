@@ -21,16 +21,58 @@ class ios_sdkTests: XCTestCase {
         super.tearDown()
     }
     
+    func testTokenizePaymentInstrument() {
+        let expectation = XCTestExpectation(description: "Tokenize payment instrument")
+        
+        let url = URL(string: "https://apple.com")!
+        
+        // Create a background task to download the web page.
+        let dataTask = URLSession.shared.dataTask(with: url) { (data, _, _) in
+            
+            // Make sure we downloaded some data.
+            XCTAssertNotNil(data, "No data was downloaded.")
+            print(String(data: data!, encoding: String.Encoding.utf8))
+            // Fulfill the expectation to indicate that the background task has finished successfully.
+            expectation.fulfill()
+            
+        }
+        
+        // Start the download task.
+        dataTask.resume()
+        
+        // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
+        wait(for: [expectation], timeout: 10.0)
+        
+    }
+    
+    
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
-        let client = Client()
-        client.tokenize() { (error) in
-            if let error = error {
-                fatalError(error.localizedDescription)
-            }
+        // Create an expectation for a background download task.
+        let expectation = XCTestExpectation(description: "Download apple.com home page")
+        
+        // Create a URL for a web page to be downloaded.
+        let url = URL(string: "https://apple.com")!
+        
+        // Create a background task to download the web page.
+        let dataTask = URLSession.shared.dataTask(with: url) { (data, _, _) in
+            
+            // Make sure we downloaded some data.
+            XCTAssertNotNil(data, "No data was downloaded.")
+            print(String(data: data!, encoding: String.Encoding.utf8))
+            // Fulfill the expectation to indicate that the background task has finished successfully.
+            expectation.fulfill()
+            
         }
+        
+        // Start the download task.
+        dataTask.resume()
+        
+        // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
+        wait(for: [expectation], timeout: 10.0)
+        
     }
     
     func testPerformanceExample() {
