@@ -8,40 +8,50 @@
 
 import Foundation
 
-class Client : NSObject {
+class HttpClient : NSObject {
     
-    func tokenize(completion: ((Error?) -> Void)?) {
-        let encoder = JSONEncoder()
-
-        var request = URLRequest(url: URL(string: "https://api-staging.finix.io/applications/AP2kL9QSWYJGpuAtYYnK5cZY/tokens")!)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+    func tokenize(post: Instrument, completion:((String?,Error?) -> Void)?) {
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "https"
+        urlComponents.host = "api-staging.finix.io"
+        urlComponents.path = "/applications/AP2kL9QSWYJGpuAtYYnK5cZY/tokens"
+        guard let url = urlComponents.url else { fatalError("Could not create URL from components") }
         
+        // Specify this request as being a POST method
+        var request = URLRequest(url: url)
         request.httpMethod = "POST"
+        // Make sure that we include headers specifying that our request's HTTP body
+        // will be JSON encoded
+        var headers = request.allHTTPHeaderFields ?? [:]
+        headers["Content-Type"] = "application/json"
+        request.allHTTPHeaderFields = headers
+        
+        // Now let's encode out Post struct into JSON data...
+        let encoder = JSONEncoder()
         do {
-            let instrument = Instrument(type: "PAYMENT_CARD", number: "4957030420210454", expiration_month: 12, expiration_year: 2020)
-            let jsonData = try encoder.encode(instrument)
+            let jsonData = try encoder.encode(post)
+            // ... and set our request's HTTP body
             request.httpBody = jsonData
+            print("jsonData: ", String(data: request.httpBody!, encoding: .utf8) ?? "no body data")
         } catch {
-            completion?(error)
+            //completion?(error)
         }
-
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {
-                print("error=\(error)")
+        
+        // Create and run a URLSession data task with our JSON encoded POST request
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        let task = session.dataTask(with: request) { (responseData, response, responseError) in
+            guard responseError == nil else {
+                //completion?(responseError!)
                 return
             }
             
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
-            }
-            
-            do {
-                if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
-                    print(json)
-                }
-            } catch let error {
-                print(error.localizedDescription)
+            // APIs usually respond with the data you just sent in your POST request
+            if let data = responseData, let utf8Representation = String(data: data, encoding: .utf8) {
+                print("response: ", utf8Representation)
+                completion?(utf8Representation, nil)
+            } else {
+                print("no readable data received in response")
             }
         }
         task.resume()

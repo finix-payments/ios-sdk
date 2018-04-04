@@ -23,28 +23,17 @@ class ios_sdkTests: XCTestCase {
     
     func testTokenizePaymentInstrument() {
         let expectation = XCTestExpectation(description: "Tokenize payment instrument")
-        
-        let url = URL(string: "https://apple.com")!
-        
-        // Create a background task to download the web page.
-        let dataTask = URLSession.shared.dataTask(with: url) { (data, _, _) in
-            
-            // Make sure we downloaded some data.
-            XCTAssertNotNil(data, "No data was downloaded.")
-            print(String(data: data!, encoding: String.Encoding.utf8))
-            // Fulfill the expectation to indicate that the background task has finished successfully.
-            expectation.fulfill()
-            
+        let httpClient = HttpClient()
+        let instrument = Instrument(type: "PAYMENT_CARD", number: "4957030420210454", expiration_month: 12, expiration_year: 2020)
+        httpClient.tokenize(post: instrument) { (data, error) in
+            if let error = error {
+                fatalError(error.localizedDescription)
+            } else if let data = data {
+                expectation.fulfill()
+            }
         }
-        
-        // Start the download task.
-        dataTask.resume()
-        
-        // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
-        wait(for: [expectation], timeout: 10.0)
-        
+        wait(for: [expectation], timeout: 2.0)
     }
-    
     
     func testExample() {
         // This is an example of a functional test case.
