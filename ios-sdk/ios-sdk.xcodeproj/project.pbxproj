@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		CE1D5F9C207548C40060FF7A /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D5F9B207548C40060FF7A /* Address.swift */; };
 		CE1D5F9E20754ABF0060FF7A /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D5F9D20754ABF0060FF7A /* Token.swift */; };
+		CE1D5FA120756AAE0060FF7A /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D5FA020756AAE0060FF7A /* Converter.swift */; };
+		CE1D5FA520757EEE0060FF7A /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D5FA420757EEE0060FF7A /* Controller.swift */; };
 		CE238BDB2074206F00CD04DD /* ios_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE238BD12074206F00CD04DD /* ios_sdk.framework */; };
 		CE238BE02074206F00CD04DD /* ios_sdkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE238BDF2074206F00CD04DD /* ios_sdkTests.swift */; };
 		CE238BE22074206F00CD04DD /* ios_sdk.h in Headers */ = {isa = PBXBuildFile; fileRef = CE238BD42074206F00CD04DD /* ios_sdk.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -30,6 +32,8 @@
 /* Begin PBXFileReference section */
 		CE1D5F9B207548C40060FF7A /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		CE1D5F9D20754ABF0060FF7A /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		CE1D5FA020756AAE0060FF7A /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
+		CE1D5FA420757EEE0060FF7A /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
 		CE238BD12074206F00CD04DD /* ios_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ios_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE238BD42074206F00CD04DD /* ios_sdk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ios_sdk.h; sourceTree = "<group>"; };
 		CE238BD52074206F00CD04DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,6 +64,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE1D5F9F20756A400060FF7A /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE1D5FA420757EEE0060FF7A /* Controller.swift */,
+				CE1D5FA020756AAE0060FF7A /* Converter.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
 		CE238BC72074206F00CD04DD = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +94,7 @@
 		CE238BD32074206F00CD04DD /* ios-sdk */ = {
 			isa = PBXGroup;
 			children = (
+				CE1D5F9F20756A400060FF7A /* controllers */,
 				CE238C282074328D00CD04DD /* https */,
 				CE238C2520742F4100CD04DD /* model */,
 				CE238BD42074206F00CD04DD /* ios_sdk.h */,
@@ -230,7 +244,9 @@
 				CE1D5F9E20754ABF0060FF7A /* Token.swift in Sources */,
 				CE238C272074321700CD04DD /* Instrument.swift in Sources */,
 				CE1D5F9C207548C40060FF7A /* Address.swift in Sources */,
+				CE1D5FA120756AAE0060FF7A /* Converter.swift in Sources */,
 				CE238C2E20743C2F00CD04DD /* Config.swift in Sources */,
+				CE1D5FA520757EEE0060FF7A /* Controller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

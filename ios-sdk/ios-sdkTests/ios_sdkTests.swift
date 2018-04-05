@@ -11,64 +11,99 @@ import XCTest
 
 class ios_sdkTests: XCTestCase {
     
+    var fixtureInstrument : Instrument! = nil
+    let fixtureType = "PAYMENT_CARD"
+    let fixtureNumber = "4957030420210454"
+    let fixtureMonth = 12
+    let fixtureYear = 2022
+    let fixtureDateString = "2018-04-04T21:49:32.18Z"
+    var fixtureDate : Date! = nil
+    var fixtureToken : Token! = nil
+    let fixtureTokenId = "TK2q97hpcG9aNnHY82Dnd398"
+    let fixtureTokenFingerprint = "FPR-549349958"
+    let fixtureTokenCurrency = "USD"
+    let fixtureTokenJSON = "{\"id\" : \"TK2q97hpcG9aNnHY82Dnd398\",\"fingerprint\" : \"FPR-549349958\",\"created_at\" : \"2018-04-04T22:23:41.84Z\",\"updated_at\" : \"2018-04-04T22:23:41.84Z\",\"instrument_type\" : \"PAYMENT_CARD\",\"expires_at\" : \"2018-04-05T22:23:41.84Z\",\"currency\" : \"USD\"}"
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = Config.dateFormat
+        fixtureDate = dateFormatter.date(from: fixtureDateString)
+        fixtureInstrument = Instrument(type: fixtureType, number: fixtureNumber, expiration_month: fixtureMonth, expiration_year: fixtureYear)
+        fixtureToken = Token(id: fixtureTokenId, fingerprint: fixtureTokenFingerprint, created_at: fixtureDate, updated_at: fixtureDate, instrument_type: fixtureType, expires_at: fixtureDate, currency: fixtureTokenCurrency)
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
-    func testTokenizePaymentInstrument() {
+    //Test the fixture instrument is instatiated correctly in setUp
+    func testFixtureInstrument() {
+        XCTAssertNotNil(fixtureInstrument)
+        XCTAssertEqual(fixtureType, fixtureInstrument.type)
+        XCTAssertEqual(fixtureNumber, fixtureInstrument.number)
+        XCTAssertEqual(fixtureMonth, fixtureInstrument.expiration_month)
+        XCTAssertEqual(fixtureYear, fixtureInstrument.expiration_year)
+    }
+    
+    //Test the fixture token is instatiated correctly in setUp
+    func testFixtureToken() {
+        XCTAssertNotNil(fixtureToken)
+        XCTAssertEqual(fixtureTokenId, fixtureToken.id)
+        XCTAssertEqual(fixtureTokenFingerprint, fixtureToken.fingerprint)
+        XCTAssertEqual(fixtureTokenCurrency, fixtureToken.currency)
+    }
+    
+    func testTokenizeInstrument() {
         let expectation = XCTestExpectation(description: "Tokenize payment instrument")
-        let httpClient = HttpClient()
-        let instrument = Instrument(type: "PAYMENT_CARD", number: "4957030420210454", expiration_month: 12, expiration_year: 2020)
-        httpClient.tokenize(post: instrument) { (data, error) in
+        Controller.tokenize(instrument: fixtureInstrument) { (token, error) in
             if let error = error {
                 fatalError(error.localizedDescription)
-            } else if let data = data {
+            } else if let token = token {
+                XCTAssertNotNil(token.id)
+                XCTAssertNotNil(token.fingerprint)
+                XCTAssertNotNil(token.created_at)
+                XCTAssertNotNil(token.updated_at)
+                XCTAssertNotNil(token.currency)
+                XCTAssertNotNil(token.instrument_type)
+                XCTAssertNotNil(token.expires_at)
                 expectation.fulfill()
             }
         }
-        wait(for: [expectation], timeout: 2.0)
+        wait(for: [expectation], timeout: 5.0)
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        
-        // Create an expectation for a background download task.
-        let expectation = XCTestExpectation(description: "Download apple.com home page")
-        
-        // Create a URL for a web page to be downloaded.
-        let url = URL(string: "https://apple.com")!
-        
-        // Create a background task to download the web page.
-        let dataTask = URLSession.shared.dataTask(with: url) { (data, _, _) in
-            
-            // Make sure we downloaded some data.
-            XCTAssertNotNil(data, "No data was downloaded.")
-            print(String(data: data!, encoding: String.Encoding.utf8))
-            // Fulfill the expectation to indicate that the background task has finished successfully.
-            expectation.fulfill()
-            
+    func testEncodeDecodePaymentInstrument() {
+        do {
+            let jsonData = try Controller.encodeJSON(fixtureToken)
+            let instrument = try Controller.decodeJSON(Token.self, data: jsonData)
+            XCTAssertNotNil(instrument)
+        } catch let error {
+            print(error)
         }
-        
-        // Start the download task.
-        dataTask.resume()
-        
-        // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
-        wait(for: [expectation], timeout: 10.0)
-        
+    }
+    
+    func testDecodeJSON() {
+        do {
+            let token = try Controller.decodeJSON(Token.self, data: fixtureTokenJSON.data(using: .utf8)!)
+            XCTAssertNotNil(token)
+            XCTAssertEqual(fixtureTokenId, token.id)
+            XCTAssertEqual(fixtureTokenFingerprint, token.fingerprint)
+        } catch let error {
+            print(error)
+        }
+    }
+    
+    func testDateFormatter() {
+        let testString = "2018-04-04T23:31:10.85Z"
+        let formatter = DateFormatter()
+        formatter.dateFormat = Config.dateFormat
+        let date = formatter.date(from: testString)
+        XCTAssertNotNil(date)
     }
     
     func testPerformanceExample() {
-        // This is an example of a performance test case.
         self.measure {
-            // Put the code you want to measure the time of here.
         }
     }
-    
 }
