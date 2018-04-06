@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Instrument: Codable {
+public struct Instrument: Codable {
     var type : String
     var number : String
     var security_code : String?
@@ -18,7 +18,7 @@ struct Instrument: Codable {
     var tags : String?
     var address : Address?
     
-    init(type:String, number:String, expiration_month:Int, expiration_year:Int) {
+    public init(type:String, number:String, expiration_month:Int, expiration_year:Int) {
         self.type = type
         self.number = number
         self.expiration_month = expiration_month

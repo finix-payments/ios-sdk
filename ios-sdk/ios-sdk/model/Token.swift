@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct Token:Codable {
-    var id : String
-    var fingerprint : String
-    var created_at : Date
-    var updated_at : Date
-    var instrument_type : String
-    var expires_at : Date
-    var currency : String
+public struct Token:Codable {
+    public var id : String
+    public var fingerprint : String
+    public var created_at : Date
+    public var updated_at : Date
+    public var instrument_type : String
+    public var expires_at : Date
+    public var currency : String
 }

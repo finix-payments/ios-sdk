@@ -8,9 +8,9 @@
 
 import Foundation
 
-class Controller {
+public class Controller {
     
-    static func tokenize(instrument: Instrument, completion:((Token?,Error?) -> Void)?) {
+    public static func tokenize(instrument: Instrument, completion:((Token?,Error?) -> Void)?) {
         do {
             let jsonData = try self.encodeJSON(instrument)
             
