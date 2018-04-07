@@ -10,8 +10,21 @@ import Foundation
 
 class HttpClient : NSObject {
     
-    static func post(jsonData: Data, completion:((Data?,Error?) -> Void)?) {
-        var request = URLRequest(url: Config.baseURL)
+    private var urlComponents = URLComponents()
+
+    init(hostFinixAPI: String) {
+        urlComponents.scheme = "https"
+        urlComponents.host = hostFinixAPI
+    }
+    
+    func post(path: String, jsonData: Data, completion:((Data?,Error?) -> Void)?) {
+        urlComponents.path = path
+        guard let url = urlComponents.url else {
+            completion?(nil, SDKError.invalidURL)
+            return
+        }
+        
+        var request = URLRequest(url: url)
         request.httpMethod = "POST"
         var headers = request.allHTTPHeaderFields ?? [:]
         headers["Content-Type"] = "application/json"

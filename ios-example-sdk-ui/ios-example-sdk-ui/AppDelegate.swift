@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  ios-example-sdk-ui
 //
-//  Created by user on 4/3/18.
+//  Created by Matt Sommer on 4/3/18.
 //  Copyright © 2018 Finix Payments, Inc. All rights reserved.
 //
 
@@ -12,10 +12,11 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let dateFormatter = DateFormatter()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         return true
     }
 

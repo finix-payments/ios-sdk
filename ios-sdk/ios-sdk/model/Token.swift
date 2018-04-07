@@ -13,7 +13,7 @@ public struct Token:Codable {
     public var fingerprint : String
     public var created_at : Date
     public var updated_at : Date
-    public var instrument_type : String
+    public var instrument_type : PaymentType
     public var expires_at : Date
     public var currency : String
 }

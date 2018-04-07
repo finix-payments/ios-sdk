@@ -9,8 +9,12 @@
 /* Begin PBXBuildFile section */
 		CE1D5F9C207548C40060FF7A /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D5F9B207548C40060FF7A /* Address.swift */; };
 		CE1D5F9E20754ABF0060FF7A /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D5F9D20754ABF0060FF7A /* Token.swift */; };
-		CE1D5FA120756AAE0060FF7A /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D5FA020756AAE0060FF7A /* Converter.swift */; };
-		CE1D5FA520757EEE0060FF7A /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D5FA420757EEE0060FF7A /* Controller.swift */; };
+		CE1D5FA520757EEE0060FF7A /* FinixAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D5FA420757EEE0060FF7A /* FinixAPI.swift */; };
+		CE1DF29E2077D1B100BAC880 /* PaymentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DF29D2077D1B100BAC880 /* PaymentType.swift */; };
+		CE1DF2A0207802F100BAC880 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DF29F207802F100BAC880 /* Response.swift */; };
+		CE1DF2A2207805BD00BAC880 /* Embedded.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DF2A1207805BD00BAC880 /* Embedded.swift */; };
+		CE1DF2A42078060A00BAC880 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DF2A32078060A00BAC880 /* APIError.swift */; };
+		CE1DF2A620780CF000BAC880 /* SDKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DF2A520780CF000BAC880 /* SDKError.swift */; };
 		CE238BDB2074206F00CD04DD /* ios_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE238BD12074206F00CD04DD /* ios_sdk.framework */; };
 		CE238BE02074206F00CD04DD /* ios_sdkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE238BDF2074206F00CD04DD /* ios_sdkTests.swift */; };
 		CE238BE22074206F00CD04DD /* ios_sdk.h in Headers */ = {isa = PBXBuildFile; fileRef = CE238BD42074206F00CD04DD /* ios_sdk.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -32,8 +36,12 @@
 /* Begin PBXFileReference section */
 		CE1D5F9B207548C40060FF7A /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		CE1D5F9D20754ABF0060FF7A /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
-		CE1D5FA020756AAE0060FF7A /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
-		CE1D5FA420757EEE0060FF7A /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
+		CE1D5FA420757EEE0060FF7A /* FinixAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinixAPI.swift; sourceTree = "<group>"; };
+		CE1DF29D2077D1B100BAC880 /* PaymentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentType.swift; sourceTree = "<group>"; };
+		CE1DF29F207802F100BAC880 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		CE1DF2A1207805BD00BAC880 /* Embedded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Embedded.swift; sourceTree = "<group>"; };
+		CE1DF2A32078060A00BAC880 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		CE1DF2A520780CF000BAC880 /* SDKError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKError.swift; sourceTree = "<group>"; };
 		CE238BD12074206F00CD04DD /* ios_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ios_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE238BD42074206F00CD04DD /* ios_sdk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ios_sdk.h; sourceTree = "<group>"; };
 		CE238BD52074206F00CD04DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,8 +75,7 @@
 		CE1D5F9F20756A400060FF7A /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CE1D5FA420757EEE0060FF7A /* Controller.swift */,
-				CE1D5FA020756AAE0060FF7A /* Converter.swift */,
+				CE1D5FA420757EEE0060FF7A /* FinixAPI.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -100,6 +107,7 @@
 				CE238BD42074206F00CD04DD /* ios_sdk.h */,
 				CE238BD52074206F00CD04DD /* Info.plist */,
 				CE238C2D20743C2F00CD04DD /* Config.swift */,
+				CE1DF2A520780CF000BAC880 /* SDKError.swift */,
 			);
 			path = "ios-sdk";
 			sourceTree = "<group>";
@@ -119,6 +127,10 @@
 				CE238C262074321700CD04DD /* Instrument.swift */,
 				CE1D5F9B207548C40060FF7A /* Address.swift */,
 				CE1D5F9D20754ABF0060FF7A /* Token.swift */,
+				CE1DF29D2077D1B100BAC880 /* PaymentType.swift */,
+				CE1DF29F207802F100BAC880 /* Response.swift */,
+				CE1DF2A1207805BD00BAC880 /* Embedded.swift */,
+				CE1DF2A32078060A00BAC880 /* APIError.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -240,13 +252,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE1DF2A0207802F100BAC880 /* Response.swift in Sources */,
 				CE238C2C20743A0300CD04DD /* HttpClient.swift in Sources */,
 				CE1D5F9E20754ABF0060FF7A /* Token.swift in Sources */,
+				CE1DF2A620780CF000BAC880 /* SDKError.swift in Sources */,
+				CE1DF2A2207805BD00BAC880 /* Embedded.swift in Sources */,
 				CE238C272074321700CD04DD /* Instrument.swift in Sources */,
 				CE1D5F9C207548C40060FF7A /* Address.swift in Sources */,
-				CE1D5FA120756AAE0060FF7A /* Converter.swift in Sources */,
+				CE1DF29E2077D1B100BAC880 /* PaymentType.swift in Sources */,
 				CE238C2E20743C2F00CD04DD /* Config.swift in Sources */,
-				CE1D5FA520757EEE0060FF7A /* Controller.swift in Sources */,
+				CE1DF2A42078060A00BAC880 /* APIError.swift in Sources */,
+				CE1D5FA520757EEE0060FF7A /* FinixAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +418,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "ios-sdk/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -430,6 +447,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "ios-sdk/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

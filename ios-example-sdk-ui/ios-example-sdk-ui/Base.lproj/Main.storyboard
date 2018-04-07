@@ -89,8 +89,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Expiration Month/Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srC-no-6Mz">
-                                                    <rect key="frame" x="16" y="12" width="143" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Expiration (mm/yyyy)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srC-no-6Mz">
+                                                    <rect key="frame" x="16" y="12" width="137" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
@@ -315,6 +315,7 @@
                         <outlet property="lblTokenId" destination="xvg-62-7AP" id="1P9-CD-lxB"/>
                         <outlet property="lblTokenType" destination="r3V-Fa-DJD" id="c6U-K1-RV9"/>
                         <outlet property="lblTokenUpdated" destination="L1n-sz-6WA" id="NjD-gT-3V3"/>
+                        <outlet property="txtExpiration" destination="ejM-Fb-Mgf" id="Yjp-KG-cP9"/>
                         <outlet property="txtNumber" destination="3V3-WH-bxJ" id="OWt-d9-PNw"/>
                     </connections>
                 </tableViewController>

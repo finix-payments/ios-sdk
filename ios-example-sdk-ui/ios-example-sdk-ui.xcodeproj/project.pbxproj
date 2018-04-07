@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE1DF2A820783C5F00BAC880 /* UIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DF2A720783C5F00BAC880 /* UIError.swift */; };
 		CE238BF8207420A100CD04DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE238BF7207420A100CD04DD /* AppDelegate.swift */; };
 		CE238BFA207420A100CD04DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE238BF9207420A100CD04DD /* ViewController.swift */; };
 		CE238BFD207420A100CD04DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE238BFB207420A100CD04DD /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CE1DF2A720783C5F00BAC880 /* UIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIError.swift; sourceTree = "<group>"; };
 		CE238BF4207420A100CD04DD /* ios-example-sdk-ui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-example-sdk-ui.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE238BF7207420A100CD04DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE238BF9207420A100CD04DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "../../../../../../../../src/ios-sdk/ios-example-sdk-ui/ios-example-sdk-ui/ViewController.swift"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +132,7 @@
 				CE238BFE207420A100CD04DD /* Assets.xcassets */,
 				CE238C00207420A100CD04DD /* LaunchScreen.storyboard */,
 				CE238C03207420A100CD04DD /* Info.plist */,
+				CE1DF2A720783C5F00BAC880 /* UIError.swift */,
 			);
 			path = "ios-example-sdk-ui";
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 			files = (
 				CE238BFA207420A100CD04DD /* ViewController.swift in Sources */,
 				CE238BF8207420A100CD04DD /* AppDelegate.swift in Sources */,
+				CE1DF2A820783C5F00BAC880 /* UIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +466,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BFS94N9L86;
 				INFOPLIST_FILE = "ios-example-sdk-ui/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -482,6 +487,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BFS94N9L86;
 				INFOPLIST_FILE = "ios-example-sdk-ui/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
