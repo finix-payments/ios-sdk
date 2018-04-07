@@ -23,8 +23,9 @@ class ViewController: UITableViewController {
     @IBOutlet weak var lblTokenExpires: UILabel!
     @IBOutlet weak var lblTokenCurrency: UILabel!
     
-    let finixTokenizeAPI = FinixAPI(host: "api-staging.finix.io", applicationId: "AP2kL9QSWYJGpuAtYYnK5cZY")
+    let finixAPI = FinixAPI(host: "api-staging.finix.io", applicationId: "AP2kL9QSWYJGpuAtYYnK5cZY")
     let app : AppDelegate = UIApplication.shared.delegate as! AppDelegate
+    let expirationPredicate = NSPredicate(format:"SELF MATCHES %@", "^[0-9]{2}\\/[0-9]{4}")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +38,7 @@ class ViewController: UITableViewController {
     @IBAction func submitBtn(_ sender: Any) {
         do {
             let instrument = try buildInstrument()
-            finixTokenizeAPI.tokenize(instrument: instrument) { (token, error) in
+            finixAPI.tokenize(instrument: instrument) { (token, error) in
                 if let token = token {
                     self.setView(token: token)
                 } else if let error = error {
@@ -50,10 +51,14 @@ class ViewController: UITableViewController {
     }
     
     func buildInstrument() throws -> Instrument {
-        let expirationFormat = "^[0-9]{2}\\/[0-9]{4}"
-        let expirationPredicate = NSPredicate(format:"SELF MATCHES %@", expirationFormat)
         if expirationPredicate.evaluate(with: txtExpiration.text!) {
-            return Instrument(type: PaymentType.PAYMENT_CARD, number: txtNumber.text!, expiration_month: 12, expiration_year: 2021)
+            guard let expirationMonth = Int(String((txtExpiration.text?.prefix(2))!)) else {
+                throw UIError.invalidExpiration
+            }
+            guard let expirationYear = Int(String((txtExpiration.text?.suffix(4))!)) else {
+                throw UIError.invalidExpiration
+            }
+            return Instrument(type: PaymentType.PAYMENT_CARD, number: txtNumber.text!, expiration_month: expirationMonth, expiration_year: expirationYear)
         } else {
             throw UIError.invalidExpiration
         }

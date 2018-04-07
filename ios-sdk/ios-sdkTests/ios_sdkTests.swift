@@ -58,63 +58,60 @@ class ios_sdkTests: XCTestCase {
     func testTokenizeInstrument() {
         let expectation = XCTestExpectation(description: "Tokenize payment instrument")
         let finixAPI = FinixAPI(host: "api-staging.finix.io", applicationId: "AP2kL9QSWYJGpuAtYYnK5cZY")
-        do {
-            try finixAPI.tokenize(instrument: fixtureInstrument) { (token,error) in
-                if let token = token {
-                    XCTAssertNotNil(token.id)
-                    XCTAssertNotNil(token.fingerprint)
-                    XCTAssertNotNil(token.created_at)
-                    XCTAssertNotNil(token.updated_at)
-                    XCTAssertNotNil(token.currency)
-                    XCTAssertNotNil(token.instrument_type)
-                    XCTAssertNotNil(token.expires_at)
-                    expectation.fulfill()
-                }
+        finixAPI.tokenize(instrument: fixtureInstrument) { (token,error) in
+            if let token = token {
+                XCTAssertNotNil(token.id)
+                XCTAssertNotNil(token.fingerprint)
+                XCTAssertNotNil(token.created_at)
+                XCTAssertNotNil(token.updated_at)
+                XCTAssertNotNil(token.currency)
+                XCTAssertNotNil(token.instrument_type)
+                XCTAssertNotNil(token.expires_at)
+                expectation.fulfill()
             }
-        } catch {
-            fatalError(error.localizedDescription)
         }
         wait(for: [expectation], timeout: 1.0)
     }
     
-//    func testEncodeDecodePaymentInstrument() {
-//        do {
-//            let jsonData = try FinixAPI.encodeJSON(fixtureToken)
-//            let instrument = try FinixAPI.decodeJSON(Token.self, data: jsonData)
-//            XCTAssertNotNil(instrument)
-//        } catch let error {
-//            print(error)
-//        }
-//    }
-//
-//    func testDecodeJSON() {
-//        do {
-//            let token = try FinixAPI.decodeJSON(Token.self, data: fixtureTokenJSON.data(using: .utf8)!)
-//            XCTAssertNotNil(token)
-//            XCTAssertEqual(fixtureTokenId, token.id)
-//            XCTAssertEqual(fixtureTokenFingerprint, token.fingerprint)
-//        } catch let error {
-//            print(error)
-//        }
-//    }
+    func testEncodeDecodePaymentInstrument() {
+        do {
+            let jsonData = try finixAPI.encodeJSON(fixtureToken)
+            let instrument = try finixAPI.decodeJSON(Token.self, data: jsonData)
+            XCTAssertNotNil(instrument)
+        } catch let error {
+            print(error)
+        }
+    }
+
+    func testDecodeJSON() {
+        do {
+            let token = try finixAPI.decodeJSON(Token.self, data: fixtureTokenJSON.data(using: .utf8)!)
+            XCTAssertNotNil(token)
+            XCTAssertEqual(fixtureTokenId, token.id)
+            XCTAssertEqual(fixtureTokenFingerprint, token.fingerprint)
+        } catch let error {
+            print(error)
+        }
+    }
     
     func testInvalidURL() {
+        let expectation = XCTestExpectation(description: "Invalid host")
         let finixAPI = FinixAPI(host: "", applicationId: "AP2kL9QSWYJGpuAtYYnK5cZY")
+        finixAPI.tokenize(instrument: fixtureInstrument) { (token,error) in
+            XCTAssertNil(token)
+            XCTAssertNotNil(error)
+            XCTAssertEqual(error as? HttpClientError, HttpClientError.noConnection)
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 5.0)
     }
     
     func testInvalidNumber() {
         let expectation = XCTestExpectation(description: "Token is nil")
         let invalidNumberInstrument = Instrument(type: PaymentType.PAYMENT_CARD, number: "invalid_number", expiration_month: fixtureMonth, expiration_year: fixtureYear)
-
-        do {
-            try finixAPI.tokenize(instrument: invalidNumberInstrument) { (token,error) in
-                XCTAssertNil(token)
-                expectation.fulfill()
-            }
-        } catch SDKError.invalidNumber {
-            print("Invalid instrument number")
-        } catch {
-            print("Unknown error")
+        finixAPI.tokenize(instrument: invalidNumberInstrument) { (token,error) in
+            XCTAssertNil(token)
+            expectation.fulfill()
         }
         wait(for: [expectation], timeout: 1.0)
     }

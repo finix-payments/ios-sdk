@@ -15,6 +15,7 @@
 		CE1DF2A2207805BD00BAC880 /* Embedded.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DF2A1207805BD00BAC880 /* Embedded.swift */; };
 		CE1DF2A42078060A00BAC880 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DF2A32078060A00BAC880 /* APIError.swift */; };
 		CE1DF2A620780CF000BAC880 /* SDKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DF2A520780CF000BAC880 /* SDKError.swift */; };
+		CE1DF2AA20784A2800BAC880 /* HttpClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DF2A920784A2800BAC880 /* HttpClientError.swift */; };
 		CE238BDB2074206F00CD04DD /* ios_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE238BD12074206F00CD04DD /* ios_sdk.framework */; };
 		CE238BE02074206F00CD04DD /* ios_sdkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE238BDF2074206F00CD04DD /* ios_sdkTests.swift */; };
 		CE238BE22074206F00CD04DD /* ios_sdk.h in Headers */ = {isa = PBXBuildFile; fileRef = CE238BD42074206F00CD04DD /* ios_sdk.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -42,6 +43,7 @@
 		CE1DF2A1207805BD00BAC880 /* Embedded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Embedded.swift; sourceTree = "<group>"; };
 		CE1DF2A32078060A00BAC880 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		CE1DF2A520780CF000BAC880 /* SDKError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKError.swift; sourceTree = "<group>"; };
+		CE1DF2A920784A2800BAC880 /* HttpClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientError.swift; sourceTree = "<group>"; };
 		CE238BD12074206F00CD04DD /* ios_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ios_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE238BD42074206F00CD04DD /* ios_sdk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ios_sdk.h; sourceTree = "<group>"; };
 		CE238BD52074206F00CD04DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				CE238C2B20743A0300CD04DD /* HttpClient.swift */,
+				CE1DF2A920784A2800BAC880 /* HttpClientError.swift */,
 			);
 			path = https;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE1DF2A0207802F100BAC880 /* Response.swift in Sources */,
+				CE1DF2AA20784A2800BAC880 /* HttpClientError.swift in Sources */,
 				CE238C2C20743A0300CD04DD /* HttpClient.swift in Sources */,
 				CE1D5F9E20754ABF0060FF7A /* Token.swift in Sources */,
 				CE1DF2A620780CF000BAC880 /* SDKError.swift in Sources */,

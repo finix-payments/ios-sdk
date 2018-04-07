@@ -20,11 +20,12 @@ public class FinixAPI {
         httpClient = HttpClient(hostFinixAPI: host)
     }
     
-    public func tokenize(instrument: Instrument, completion:((Token?, SDKError?) -> Void)?) {
+    public func tokenize(instrument: Instrument, completion:((Token?, Error?) -> Void)?) {
         do {
             let jsonData = try self.encodeJSON(instrument)
             httpClient.post(path: self.path, jsonData: jsonData) { (data, error) in
                 if let error = error {
+                    completion?(nil,HttpClientError.noConnection)
                     print("Post Error:::" + error.localizedDescription)
                 } else if let data = data {
                     do {
