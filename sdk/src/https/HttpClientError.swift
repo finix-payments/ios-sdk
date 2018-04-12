@@ -2,7 +2,7 @@
 //  HttpClientError.swift
 //  ios-sdk
 //
-//  Created by user on 4/6/18.
+//  Created by Matt Sommer on 4/6/18.
 //  Copyright © 2018 Finix Payments, Inc. All rights reserved.
 //
 

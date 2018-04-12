@@ -15,8 +15,8 @@ public struct Instrument: Codable {
     var expiration_month : Int
     var expiration_year : Int
     var name : String?
-    var tags : String?
     var address : Address?
+    var tags : [String:String]?
     
     public init(type:PaymentType, number:String, expiration_month:Int, expiration_year:Int) {
         self.type = type

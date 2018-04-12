@@ -2,7 +2,7 @@
 //  ios_example_sdk_uiTests.swift
 //  ios-example-sdk-uiTests
 //
-//  Created by user on 4/3/18.
+//  Created by Matt Sommer on 4/3/18.
 //  Copyright © 2018 Finix Payments, Inc. All rights reserved.
 //
 

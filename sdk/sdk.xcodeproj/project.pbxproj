@@ -22,6 +22,8 @@
 		CE238C272074321700CD04DD /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE238C262074321700CD04DD /* Instrument.swift */; };
 		CE238C2C20743A0300CD04DD /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE238C2B20743A0300CD04DD /* HttpClient.swift */; };
 		CE238C2E20743C2F00CD04DD /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE238C2D20743C2F00CD04DD /* Config.swift */; };
+		CE933EE0207FB9AE00622F70 /* TokenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE933EDE207FB90600622F70 /* TokenTests.swift */; };
+		CE933EE3207FBC0900622F70 /* InstrumentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE933EE1207FBBF500622F70 /* InstrumentTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		CE238C262074321700CD04DD /* Instrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
 		CE238C2B20743A0300CD04DD /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		CE238C2D20743C2F00CD04DD /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		CE933EDE207FB90600622F70 /* TokenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenTests.swift; sourceTree = "<group>"; };
+		CE933EE1207FBBF500622F70 /* InstrumentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,12 +78,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CE1D5F9F20756A400060FF7A /* controllers */ = {
+		CE1D5F9F20756A400060FF7A /* control */ = {
 			isa = PBXGroup;
 			children = (
 				CE1D5FA420757EEE0060FF7A /* FinixAPI.swift */,
+				CE238C2D20743C2F00CD04DD /* Config.swift */,
 			);
-			path = controllers;
+			path = control;
 			sourceTree = "<group>";
 		};
 		CE238BC72074206F00CD04DD = {
@@ -103,13 +108,11 @@
 		CE238BD32074206F00CD04DD /* src */ = {
 			isa = PBXGroup;
 			children = (
-				CE1D5F9F20756A400060FF7A /* controllers */,
+				CE1D5F9F20756A400060FF7A /* control */,
 				CE238C282074328D00CD04DD /* https */,
 				CE238C2520742F4100CD04DD /* model */,
 				CE238BD42074206F00CD04DD /* ios_sdk.h */,
 				CE238BD52074206F00CD04DD /* Info.plist */,
-				CE238C2D20743C2F00CD04DD /* Config.swift */,
-				CE1DF2A520780CF000BAC880 /* SDKError.swift */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -117,6 +120,7 @@
 		CE238BDE2074206F00CD04DD /* tests */ = {
 			isa = PBXGroup;
 			children = (
+				CE933EDD207FB8E800622F70 /* model */,
 				CE238BDF2074206F00CD04DD /* ios_sdkTests.swift */,
 				CE238BE12074206F00CD04DD /* Info.plist */,
 			);
@@ -126,6 +130,7 @@
 		CE238C2520742F4100CD04DD /* model */ = {
 			isa = PBXGroup;
 			children = (
+				CE1DF2A520780CF000BAC880 /* SDKError.swift */,
 				CE238C262074321700CD04DD /* Instrument.swift */,
 				CE1D5F9B207548C40060FF7A /* Address.swift */,
 				CE1D5F9D20754ABF0060FF7A /* Token.swift */,
@@ -144,6 +149,15 @@
 				CE1DF2A920784A2800BAC880 /* HttpClientError.swift */,
 			);
 			path = https;
+			sourceTree = "<group>";
+		};
+		CE933EDD207FB8E800622F70 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				CE933EDE207FB90600622F70 /* TokenTests.swift */,
+				CE933EE1207FBBF500622F70 /* InstrumentTests.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,7 +288,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE933EE3207FBC0900622F70 /* InstrumentTests.swift in Sources */,
 				CE238BE02074206F00CD04DD /* ios_sdkTests.swift in Sources */,
+				CE933EE0207FB9AE00622F70 /* TokenTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
