@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		CE1D5F9C207548C40060FF7A /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D5F9B207548C40060FF7A /* Address.swift */; };
 		CE1D5F9E20754ABF0060FF7A /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D5F9D20754ABF0060FF7A /* Token.swift */; };
-		CE1D5FA520757EEE0060FF7A /* FinixAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D5FA420757EEE0060FF7A /* FinixAPI.swift */; };
+		CE1D5FA520757EEE0060FF7A /* PaymentsSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D5FA420757EEE0060FF7A /* PaymentsSDK.swift */; };
 		CE1DF29E2077D1B100BAC880 /* PaymentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DF29D2077D1B100BAC880 /* PaymentType.swift */; };
 		CE1DF2A0207802F100BAC880 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DF29F207802F100BAC880 /* Response.swift */; };
 		CE1DF2A2207805BD00BAC880 /* Embedded.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DF2A1207805BD00BAC880 /* Embedded.swift */; };
@@ -17,13 +17,14 @@
 		CE1DF2A620780CF000BAC880 /* SDKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DF2A520780CF000BAC880 /* SDKError.swift */; };
 		CE1DF2AA20784A2800BAC880 /* HttpClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DF2A920784A2800BAC880 /* HttpClientError.swift */; };
 		CE238BDB2074206F00CD04DD /* sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE238BD12074206F00CD04DD /* sdk.framework */; };
-		CE238BE02074206F00CD04DD /* ios_sdkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE238BDF2074206F00CD04DD /* ios_sdkTests.swift */; };
+		CE238BE02074206F00CD04DD /* ConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE238BDF2074206F00CD04DD /* ConfigTests.swift */; };
 		CE238BE22074206F00CD04DD /* ios_sdk.h in Headers */ = {isa = PBXBuildFile; fileRef = CE238BD42074206F00CD04DD /* ios_sdk.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE238C272074321700CD04DD /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE238C262074321700CD04DD /* Instrument.swift */; };
 		CE238C2C20743A0300CD04DD /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE238C2B20743A0300CD04DD /* HttpClient.swift */; };
 		CE238C2E20743C2F00CD04DD /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE238C2D20743C2F00CD04DD /* Config.swift */; };
 		CE933EE0207FB9AE00622F70 /* TokenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE933EDE207FB90600622F70 /* TokenTests.swift */; };
 		CE933EE3207FBC0900622F70 /* InstrumentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE933EE1207FBBF500622F70 /* InstrumentTests.swift */; };
+		CE933EE8207FCFBE00622F70 /* HttpClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE933EE6207FC9B900622F70 /* HttpClientTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,7 @@
 /* Begin PBXFileReference section */
 		CE1D5F9B207548C40060FF7A /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		CE1D5F9D20754ABF0060FF7A /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
-		CE1D5FA420757EEE0060FF7A /* FinixAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinixAPI.swift; sourceTree = "<group>"; };
+		CE1D5FA420757EEE0060FF7A /* PaymentsSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsSDK.swift; sourceTree = "<group>"; };
 		CE1DF29D2077D1B100BAC880 /* PaymentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentType.swift; sourceTree = "<group>"; };
 		CE1DF29F207802F100BAC880 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		CE1DF2A1207805BD00BAC880 /* Embedded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Embedded.swift; sourceTree = "<group>"; };
@@ -50,13 +51,14 @@
 		CE238BD42074206F00CD04DD /* ios_sdk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ios_sdk.h; sourceTree = "<group>"; };
 		CE238BD52074206F00CD04DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE238BDA2074206F00CD04DD /* sdkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sdkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE238BDF2074206F00CD04DD /* ios_sdkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_sdkTests.swift; sourceTree = "<group>"; };
+		CE238BDF2074206F00CD04DD /* ConfigTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigTests.swift; sourceTree = "<group>"; };
 		CE238BE12074206F00CD04DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE238C262074321700CD04DD /* Instrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
 		CE238C2B20743A0300CD04DD /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		CE238C2D20743C2F00CD04DD /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		CE933EDE207FB90600622F70 /* TokenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenTests.swift; sourceTree = "<group>"; };
 		CE933EE1207FBBF500622F70 /* InstrumentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentTests.swift; sourceTree = "<group>"; };
+		CE933EE6207FC9B900622F70 /* HttpClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +83,7 @@
 		CE1D5F9F20756A400060FF7A /* control */ = {
 			isa = PBXGroup;
 			children = (
-				CE1D5FA420757EEE0060FF7A /* FinixAPI.swift */,
+				CE1D5FA420757EEE0060FF7A /* PaymentsSDK.swift */,
 				CE238C2D20743C2F00CD04DD /* Config.swift */,
 			);
 			path = control;
@@ -120,8 +122,9 @@
 		CE238BDE2074206F00CD04DD /* tests */ = {
 			isa = PBXGroup;
 			children = (
+				CE933EE5207FC9AB00622F70 /* https */,
+				CE933EE4207FC96B00622F70 /* control */,
 				CE933EDD207FB8E800622F70 /* model */,
-				CE238BDF2074206F00CD04DD /* ios_sdkTests.swift */,
 				CE238BE12074206F00CD04DD /* Info.plist */,
 			);
 			path = tests;
@@ -158,6 +161,22 @@
 				CE933EE1207FBBF500622F70 /* InstrumentTests.swift */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		CE933EE4207FC96B00622F70 /* control */ = {
+			isa = PBXGroup;
+			children = (
+				CE238BDF2074206F00CD04DD /* ConfigTests.swift */,
+			);
+			path = control;
+			sourceTree = "<group>";
+		};
+		CE933EE5207FC9AB00622F70 /* https */ = {
+			isa = PBXGroup;
+			children = (
+				CE933EE6207FC9B900622F70 /* HttpClientTests.swift */,
+			);
+			path = https;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,7 +299,7 @@
 				CE1DF29E2077D1B100BAC880 /* PaymentType.swift in Sources */,
 				CE238C2E20743C2F00CD04DD /* Config.swift in Sources */,
 				CE1DF2A42078060A00BAC880 /* APIError.swift in Sources */,
-				CE1D5FA520757EEE0060FF7A /* FinixAPI.swift in Sources */,
+				CE1D5FA520757EEE0060FF7A /* PaymentsSDK.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +308,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE933EE3207FBC0900622F70 /* InstrumentTests.swift in Sources */,
-				CE238BE02074206F00CD04DD /* ios_sdkTests.swift in Sources */,
+				CE238BE02074206F00CD04DD /* ConfigTests.swift in Sources */,
+				CE933EE8207FCFBE00622F70 /* HttpClientTests.swift in Sources */,
 				CE933EE0207FB9AE00622F70 /* TokenTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

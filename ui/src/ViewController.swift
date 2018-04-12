@@ -37,8 +37,8 @@ class ViewController: UITableViewController {
 
     @IBAction func submitBtn(_ sender: Any) {
         do {
-            let instrument = try buildInstrument()
-            finixAPI.tokenize(instrument: instrument) { (token, error) in
+            //Call the SDK to tokenize a payment instrument
+            finixAPI.tokenize(instrument: try buildInstrumentFromForm()) { (token, error) in
                 if let token = token {
                     self.setView(token: token)
                 } else if let error = error {
@@ -50,20 +50,23 @@ class ViewController: UITableViewController {
         }
     }
     
-    func buildInstrument() throws -> Instrument {
-        if expirationPredicate.evaluate(with: txtExpiration.text!) {
-            guard let expirationMonth = Int(String((txtExpiration.text?.prefix(2))!)) else {
-                throw UIError.invalidExpiration
-            }
-            guard let expirationYear = Int(String((txtExpiration.text?.suffix(4))!)) else {
-                throw UIError.invalidExpiration
-            }
-            return Instrument(type: PaymentType.PAYMENT_CARD, number: txtNumber.text!, expiration_month: expirationMonth, expiration_year: expirationYear)
-        } else {
+    //Extract form fields and build a payment instrument
+    func buildInstrumentFromForm() throws -> Instrument {
+        guard
+            let expirationStr = txtExpiration.text, //Extract the expiration string from the text box
+            expirationPredicate.evaluate(with: expirationStr), //Validate the expiration string has valid form
+            let expirationMonth = Int(String((expirationStr.prefix(2)))), //Extract the month from the string
+            let expirationYear = Int(String((expirationStr.suffix(4)))) //Extract the year from the string
+        else {
             throw UIError.invalidExpiration
         }
+        guard let number = txtNumber.text else {
+            throw UIError.invalidCardNumber
+        }
+        return Instrument(type: PaymentType.PAYMENT_CARD, number: number, expiration_month: expirationMonth, expiration_year: expirationYear)
     }
     
+    //Set the view in the app
     func setView(token: Token) {
         DispatchQueue.main.async {
             self.lblTokenId.text = "ID: " + token.id
@@ -76,6 +79,7 @@ class ViewController: UITableViewController {
         }
     }
     
+    //Display an error message
     func displayError(error:Error) {
         DispatchQueue.main.async {
             let alert = UIAlertController(title: "There was an error", message: error.localizedDescription, preferredStyle: .alert)
@@ -83,5 +87,4 @@ class ViewController: UITableViewController {
             self.present(alert, animated: true)
         }
     }
-    
 }

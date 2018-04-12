@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class FinixAPI {
+public class PaymentsSDK {
 
     var httpClient : HttpClient
     var applicationsPath : String = "/applications/"

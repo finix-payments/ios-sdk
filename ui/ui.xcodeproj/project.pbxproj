@@ -102,13 +102,13 @@
 		CE238BF6207420A100CD04DD /* src */ = {
 			isa = PBXGroup;
 			children = (
+				CE933EE9207FD53000622F70 /* model */,
 				CE238BF7207420A100CD04DD /* AppDelegate.swift */,
 				CE238BF9207420A100CD04DD /* ViewController.swift */,
 				CE238BFB207420A100CD04DD /* Main.storyboard */,
 				CE238BFE207420A100CD04DD /* Assets.xcassets */,
 				CE238C00207420A100CD04DD /* LaunchScreen.storyboard */,
 				CE238C03207420A100CD04DD /* Info.plist */,
-				CE1DF2A720783C5F00BAC880 /* UIError.swift */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -120,6 +120,14 @@
 				CE238C0E207420A200CD04DD /* Info.plist */,
 			);
 			path = tests;
+			sourceTree = "<group>";
+		};
+		CE933EE9207FD53000622F70 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				CE1DF2A720783C5F00BAC880 /* UIError.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
