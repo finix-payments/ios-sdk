@@ -11,6 +11,7 @@ import Foundation
 public enum SDKError:Error {
     case invalidURL
     case invalidNumber
+    case invalidJSON
 }
 
 extension SDKError: LocalizedError {
@@ -20,6 +21,8 @@ extension SDKError: LocalizedError {
             return NSLocalizedString("Number is invalid", comment: "Number is invalid")
         case .invalidURL:
             return NSLocalizedString("URL is invalid", comment: "URL is invalid")
+        case .invalidJSON:
+            return NSLocalizedString("JSON is invalid", comment: "There was an issue parsing the JSON")
         }
     }
 }

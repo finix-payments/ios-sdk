@@ -13,13 +13,17 @@ class ios_sdkTests: XCTestCase {
 
     func testInvalidURL() {
         let expectation = XCTestExpectation(description: "Invalid host")
-        let finixAPI = PaymentsSDK(host: "", applicationId: "AP2kL9QSWYJGpuAtYYnK5cZY")
-        finixAPI.tokenize(instrument: Instrument(type: PaymentType.PAYMENT_CARD, number: "123", expiration_month: 12, expiration_year: 2021)) { (token,error) in
-            XCTAssertNil(token)
-            XCTAssertNotNil(error)
-            XCTAssertEqual(error as? HttpClientError, HttpClientError.noConnection)
-            expectation.fulfill()
+        let paymentsSDK = PaymentsSDK(host: "", applicationId: "AP2kL9QSWYJGpuAtYYnK5cZY")
+        do {
+            try paymentsSDK.tokenize(instrument: Instrument(type: PaymentType.PAYMENT_CARD, number: "123", expiration_month: 12, expiration_year: 2021)) { (token,error) in
+                XCTAssertNil(token)
+                XCTAssertNotNil(error)
+                expectation.fulfill()
+            }
+        } catch {
+            
         }
+        
         wait(for: [expectation], timeout: 5.0)
     }
     

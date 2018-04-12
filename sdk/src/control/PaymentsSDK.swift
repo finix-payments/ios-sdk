@@ -20,41 +20,34 @@ public class PaymentsSDK {
         httpClient = HttpClient(hostFinixAPI: host)
     }
     
-    public func tokenize(instrument: Instrument, completion:((Token?, Error?) -> Void)?) {
-        do {
-            let jsonData = try self.encodeJSON(instrument)
-            httpClient.post(path: self.path, jsonData: jsonData) { (data, error) in
-                if let error = error {
-                    completion?(nil,HttpClientError.noConnection)
-                    print("Post Error:::" + error.localizedDescription)
-                } else if let data = data {
-                    do {
-                        let response = try self.decodeJSON(Response.self, data: data)
-                        if let errors = response._embedded?.errors {
-                            for apiError:APIError in errors {
-                                print(apiError.message)
-                                completion?(nil,SDKError.invalidNumber)
-                            }
+    public func tokenize(instrument: Instrument, completion:((Token?, Error?) -> Void)?) throws {
+        guard let json = try self.encodeJSON(instrument) else {
+            throw SDKError.invalidJSON
+        }
+        httpClient.post(to: path, data: json) { (data, error) in
+            if let error = error {
+                completion?(nil,error)
+            }
+            if let data = data {
+                do {
+                    let response = try self.decodeJSON(Response.self, data: data)
+                    if let errors = response._embedded?.errors {
+                        for apiError:APIError in errors {
+                            print(apiError.message)
+                            completion?(nil,SDKError.invalidNumber)
                         }
-                        if response.id != nil {
-                            do {
-                                completion?(try self.decodeJSON(Token.self, data: data),nil)
-                            } catch {
-                                
-                            }
-                        }
-                    } catch let error {
-                        print("Parse Error:::" + error.localizedDescription)
                     }
+                    if response.id != nil {
+                        completion?(try self.decodeJSON(Token.self, data: data),nil)
+                    }
+                } catch {
+                    completion?(nil, SDKError.invalidJSON)
                 }
             }
-        } catch {
-            print("Encode Error:::" + error.localizedDescription)
         }
-
     }
     
-    func encodeJSON<T: Encodable>(_ encodable: T) throws -> Data {
+    func encodeJSON<T: Encodable>(_ encodable: T) throws -> Data? {
         let encoder = JSONEncoder()
         let formatter = DateFormatter()
         formatter.dateFormat = Config.dateFormat

@@ -18,7 +18,7 @@ class TokenTests: XCTestCase {
     let fixtureTokenInstrumentType = PaymentType.PAYMENT_CARD
     var fixtureDate : Date! = nil
     let fixtureDateString = "2018-04-04T21:49:32.18Z"
-    let finixAPI = FinixAPI(host: "api-staging.finix.io", applicationId: "AP2kL9QSWYJGpuAtYYnK5cZY")
+    let finixAPI = PaymentsSDK(host: "api-staging.finix.io", applicationId: "AP2kL9QSWYJGpuAtYYnK5cZY")
     let fixtureTokenJSON = "{\"id\" : \"TK2q97hpcG9aNnHY82Dnd398\",\"fingerprint\" : \"FPR-549349958\",\"created_at\" : \"2018-04-04T22:23:41.84Z\",\"updated_at\" : \"2018-04-04T22:23:41.84Z\",\"instrument_type\" : \"PAYMENT_CARD\",\"expires_at\" : \"2018-04-05T22:23:41.84Z\",\"currency\" : \"USD\"}"
     
     override func setUp() {
