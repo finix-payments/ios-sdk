@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/user/src/ios-sdk/ios-sdk/sdk.xcodeproj">
+      location = "group:sdk/sdk.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:/Users/user/src/ios-sdk/ios-example-sdk-ui/ui.xcodeproj">

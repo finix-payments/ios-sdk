@@ -34,6 +34,20 @@
 			remoteGlobalIDString = CE238BF3207420A100CD04DD;
 			remoteInfo = "ios-example-sdk-ui";
 		};
+		CEA4CC25207FAE68007BB8D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEA4CC20207FAE68007BB8D0 /* sdk.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CE238BD12074206F00CD04DD;
+			remoteInfo = sdk;
+		};
+		CEA4CC27207FAE68007BB8D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEA4CC20207FAE68007BB8D0 /* sdk.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CE238BDA2074206F00CD04DD;
+			remoteInfo = sdkTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -66,6 +80,7 @@
 		CE238C17207420A200CD04DD /* ios_example_sdk_uiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_example_sdk_uiUITests.swift; sourceTree = "<group>"; };
 		CE238C19207420A200CD04DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE3C40532076E01C00468D16 /* ios_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ios_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEA4CC20207FAE68007BB8D0 /* sdk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = sdk.xcodeproj; path = ../sdk/sdk.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +119,7 @@
 		CE238BEB207420A100CD04DD = {
 			isa = PBXGroup;
 			children = (
+				CEA4CC20207FAE68007BB8D0 /* sdk.xcodeproj */,
 				CE3C40532076E01C00468D16 /* ios_sdk.framework */,
 				CE238BF6207420A100CD04DD /* ios-example-sdk-ui */,
 				CE238C0B207420A200CD04DD /* ios-example-sdk-uiTests */,
@@ -153,6 +169,15 @@
 				CE238C19207420A200CD04DD /* Info.plist */,
 			);
 			path = "ios-example-sdk-uiUITests";
+			sourceTree = "<group>";
+		};
+		CEA4CC21207FAE68007BB8D0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEA4CC26207FAE68007BB8D0 /* sdk.framework */,
+				CEA4CC28207FAE68007BB8D0 /* sdkTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +271,12 @@
 			mainGroup = CE238BEB207420A100CD04DD;
 			productRefGroup = CE238BF5207420A100CD04DD /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CEA4CC21207FAE68007BB8D0 /* Products */;
+					ProjectRef = CEA4CC20207FAE68007BB8D0 /* sdk.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				CE238BF3207420A100CD04DD /* ui */,
@@ -254,6 +285,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		CEA4CC26207FAE68007BB8D0 /* sdk.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = sdk.framework;
+			remoteRef = CEA4CC25207FAE68007BB8D0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CEA4CC28207FAE68007BB8D0 /* sdkTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = sdkTests.xctest;
+			remoteRef = CEA4CC27207FAE68007BB8D0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CE238BF2207420A100CD04DD /* Resources */ = {
