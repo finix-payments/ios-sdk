@@ -9,7 +9,7 @@
 import Foundation
 
 import XCTest
-@testable import ios_sdk
+@testable import sdk
 
 class InstrumentTests: XCTestCase {
     
@@ -20,7 +20,7 @@ class InstrumentTests: XCTestCase {
     let fixtureYear = 2022
     let fixtureDateString = "2018-04-04T21:49:32.18Z"
     var fixtureDate : Date! = nil
-    let finixAPI = FinixAPI(host: "api-staging.finix.io", applicationId: "AP2kL9QSWYJGpuAtYYnK5cZY")
+    let finixAPI = PaymentsSDK(host: "api-staging.finix.io", applicationId: "AP2kL9QSWYJGpuAtYYnK5cZY")
     
     override func setUp() {
         super.setUp()
@@ -41,7 +41,7 @@ class InstrumentTests: XCTestCase {
     
     func testTokenizeInstrument() {
         let expectation = XCTestExpectation(description: "Tokenize payment instrument")
-        let finixAPI = FinixAPI(host: "api-staging.finix.io", applicationId: "AP2kL9QSWYJGpuAtYYnK5cZY")
+        let finixAPI = PaymentsSDK(host: "api-staging.finix.io", applicationId: "AP2kL9QSWYJGpuAtYYnK5cZY")
         finixAPI.tokenize(instrument: fixtureInstrument) { (token,error) in
             if let token = token {
                 XCTAssertNotNil(token.id)

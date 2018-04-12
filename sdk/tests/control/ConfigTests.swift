@@ -7,13 +7,13 @@
 //
 
 import XCTest
-@testable import ios_sdk
+@testable import sdk
 
 class ios_sdkTests: XCTestCase {
 
     func testInvalidURL() {
         let expectation = XCTestExpectation(description: "Invalid host")
-        let finixAPI = FinixAPI(host: "", applicationId: "AP2kL9QSWYJGpuAtYYnK5cZY")
+        let finixAPI = PaymentsSDK(host: "", applicationId: "AP2kL9QSWYJGpuAtYYnK5cZY")
         finixAPI.tokenize(instrument: Instrument(type: PaymentType.PAYMENT_CARD, number: "123", expiration_month: 12, expiration_year: 2021)) { (token,error) in
             XCTAssertNil(token)
             XCTAssertNotNil(error)

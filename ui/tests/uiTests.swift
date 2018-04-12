@@ -7,9 +7,9 @@
 //
 
 import XCTest
-@testable import ios_example_sdk_ui
+@testable import ui
 
-class ios_example_sdk_uiTests: XCTestCase {
+class uiTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
