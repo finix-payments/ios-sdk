@@ -52,17 +52,17 @@
 
 /* Begin PBXFileReference section */
 		CE1DF2A720783C5F00BAC880 /* UIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIError.swift; sourceTree = "<group>"; };
-		CE238BF4207420A100CD04DD /* ios-example-sdk-ui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-example-sdk-ui.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE238BF4207420A100CD04DD /* ui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ui.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE238BF7207420A100CD04DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE238BF9207420A100CD04DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "../../../../../../../../src/ios-sdk/ios-example-sdk-ui/ios-example-sdk-ui/ViewController.swift"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE238BFC207420A100CD04DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE238BFE207420A100CD04DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE238C01207420A100CD04DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE238C03207420A100CD04DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE238C08207420A200CD04DD /* ios-example-sdk-uiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-example-sdk-uiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE238C08207420A200CD04DD /* uiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = uiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE238C0C207420A200CD04DD /* ios_example_sdk_uiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_example_sdk_uiTests.swift; sourceTree = "<group>"; };
 		CE238C0E207420A200CD04DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE238C13207420A200CD04DD /* ios-example-sdk-uiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-example-sdk-uiUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE238C13207420A200CD04DD /* uiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = uiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE238C17207420A200CD04DD /* ios_example_sdk_uiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_example_sdk_uiUITests.swift; sourceTree = "<group>"; };
 		CE238C19207420A200CD04DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE3C40532076E01C00468D16 /* ios_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ios_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,9 +116,9 @@
 		CE238BF5207420A100CD04DD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CE238BF4207420A100CD04DD /* ios-example-sdk-ui.app */,
-				CE238C08207420A200CD04DD /* ios-example-sdk-uiTests.xctest */,
-				CE238C13207420A200CD04DD /* ios-example-sdk-uiUITests.xctest */,
+				CE238BF4207420A100CD04DD /* ui.app */,
+				CE238C08207420A200CD04DD /* uiTests.xctest */,
+				CE238C13207420A200CD04DD /* uiUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -158,9 +158,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CE238BF3207420A100CD04DD /* ios-example-sdk-ui */ = {
+		CE238BF3207420A100CD04DD /* ui */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CE238C1C207420A200CD04DD /* Build configuration list for PBXNativeTarget "ios-example-sdk-ui" */;
+			buildConfigurationList = CE238C1C207420A200CD04DD /* Build configuration list for PBXNativeTarget "ui" */;
 			buildPhases = (
 				CE238BF0207420A100CD04DD /* Sources */,
 				CE238BF1207420A100CD04DD /* Frameworks */,
@@ -171,14 +171,14 @@
 			);
 			dependencies = (
 			);
-			name = "ios-example-sdk-ui";
+			name = ui;
 			productName = "ios-example-sdk-ui";
-			productReference = CE238BF4207420A100CD04DD /* ios-example-sdk-ui.app */;
+			productReference = CE238BF4207420A100CD04DD /* ui.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CE238C07207420A200CD04DD /* ios-example-sdk-uiTests */ = {
+		CE238C07207420A200CD04DD /* uiTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CE238C1F207420A200CD04DD /* Build configuration list for PBXNativeTarget "ios-example-sdk-uiTests" */;
+			buildConfigurationList = CE238C1F207420A200CD04DD /* Build configuration list for PBXNativeTarget "uiTests" */;
 			buildPhases = (
 				CE238C04207420A200CD04DD /* Sources */,
 				CE238C05207420A200CD04DD /* Frameworks */,
@@ -189,14 +189,14 @@
 			dependencies = (
 				CE238C0A207420A200CD04DD /* PBXTargetDependency */,
 			);
-			name = "ios-example-sdk-uiTests";
+			name = uiTests;
 			productName = "ios-example-sdk-uiTests";
-			productReference = CE238C08207420A200CD04DD /* ios-example-sdk-uiTests.xctest */;
+			productReference = CE238C08207420A200CD04DD /* uiTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		CE238C12207420A200CD04DD /* ios-example-sdk-uiUITests */ = {
+		CE238C12207420A200CD04DD /* uiUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CE238C22207420A200CD04DD /* Build configuration list for PBXNativeTarget "ios-example-sdk-uiUITests" */;
+			buildConfigurationList = CE238C22207420A200CD04DD /* Build configuration list for PBXNativeTarget "uiUITests" */;
 			buildPhases = (
 				CE238C0F207420A200CD04DD /* Sources */,
 				CE238C10207420A200CD04DD /* Frameworks */,
@@ -207,9 +207,9 @@
 			dependencies = (
 				CE238C15207420A200CD04DD /* PBXTargetDependency */,
 			);
-			name = "ios-example-sdk-uiUITests";
+			name = uiUITests;
 			productName = "ios-example-sdk-uiUITests";
-			productReference = CE238C13207420A200CD04DD /* ios-example-sdk-uiUITests.xctest */;
+			productReference = CE238C13207420A200CD04DD /* uiUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -235,7 +235,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CE238BEF207420A100CD04DD /* Build configuration list for PBXProject "ios-example-sdk-ui" */;
+			buildConfigurationList = CE238BEF207420A100CD04DD /* Build configuration list for PBXProject "ui" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -248,9 +248,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CE238BF3207420A100CD04DD /* ios-example-sdk-ui */,
-				CE238C07207420A200CD04DD /* ios-example-sdk-uiTests */,
-				CE238C12207420A200CD04DD /* ios-example-sdk-uiUITests */,
+				CE238BF3207420A100CD04DD /* ui */,
+				CE238C07207420A200CD04DD /* uiTests */,
+				CE238C12207420A200CD04DD /* uiUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -314,12 +314,12 @@
 /* Begin PBXTargetDependency section */
 		CE238C0A207420A200CD04DD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CE238BF3207420A100CD04DD /* ios-example-sdk-ui */;
+			target = CE238BF3207420A100CD04DD /* ui */;
 			targetProxy = CE238C09207420A200CD04DD /* PBXContainerItemProxy */;
 		};
 		CE238C15207420A200CD04DD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CE238BF3207420A100CD04DD /* ios-example-sdk-ui */;
+			target = CE238BF3207420A100CD04DD /* ui */;
 			targetProxy = CE238C14207420A200CD04DD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -471,7 +471,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "finixpayments.ios-example-sdk-ui";
+				PRODUCT_BUNDLE_IDENTIFIER = finixpayments.ios.ui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -492,7 +492,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "finixpayments.ios-example-sdk-ui";
+				PRODUCT_BUNDLE_IDENTIFIER = finixpayments.ios.ui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -516,7 +516,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ios-example-sdk-ui.app/ios-example-sdk-ui";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ui.app/ui";
 			};
 			name = Debug;
 		};
@@ -536,7 +536,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ios-example-sdk-ui.app/ios-example-sdk-ui";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ui.app/ui";
 			};
 			name = Release;
 		};
@@ -581,7 +581,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CE238BEF207420A100CD04DD /* Build configuration list for PBXProject "ios-example-sdk-ui" */ = {
+		CE238BEF207420A100CD04DD /* Build configuration list for PBXProject "ui" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE238C1A207420A200CD04DD /* Debug */,
@@ -590,7 +590,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CE238C1C207420A200CD04DD /* Build configuration list for PBXNativeTarget "ios-example-sdk-ui" */ = {
+		CE238C1C207420A200CD04DD /* Build configuration list for PBXNativeTarget "ui" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE238C1D207420A200CD04DD /* Debug */,
@@ -599,7 +599,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CE238C1F207420A200CD04DD /* Build configuration list for PBXNativeTarget "ios-example-sdk-uiTests" */ = {
+		CE238C1F207420A200CD04DD /* Build configuration list for PBXNativeTarget "uiTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE238C20207420A200CD04DD /* Debug */,
@@ -608,7 +608,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CE238C22207420A200CD04DD /* Build configuration list for PBXNativeTarget "ios-example-sdk-uiUITests" */ = {
+		CE238C22207420A200CD04DD /* Build configuration list for PBXNativeTarget "uiUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE238C23207420A200CD04DD /* Debug */,

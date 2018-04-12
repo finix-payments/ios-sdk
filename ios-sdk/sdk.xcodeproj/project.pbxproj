@@ -16,7 +16,7 @@
 		CE1DF2A42078060A00BAC880 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DF2A32078060A00BAC880 /* APIError.swift */; };
 		CE1DF2A620780CF000BAC880 /* SDKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DF2A520780CF000BAC880 /* SDKError.swift */; };
 		CE1DF2AA20784A2800BAC880 /* HttpClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DF2A920784A2800BAC880 /* HttpClientError.swift */; };
-		CE238BDB2074206F00CD04DD /* ios_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE238BD12074206F00CD04DD /* ios_sdk.framework */; };
+		CE238BDB2074206F00CD04DD /* sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE238BD12074206F00CD04DD /* sdk.framework */; };
 		CE238BE02074206F00CD04DD /* ios_sdkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE238BDF2074206F00CD04DD /* ios_sdkTests.swift */; };
 		CE238BE22074206F00CD04DD /* ios_sdk.h in Headers */ = {isa = PBXBuildFile; fileRef = CE238BD42074206F00CD04DD /* ios_sdk.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE238C272074321700CD04DD /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE238C262074321700CD04DD /* Instrument.swift */; };
@@ -44,10 +44,10 @@
 		CE1DF2A32078060A00BAC880 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		CE1DF2A520780CF000BAC880 /* SDKError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKError.swift; sourceTree = "<group>"; };
 		CE1DF2A920784A2800BAC880 /* HttpClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientError.swift; sourceTree = "<group>"; };
-		CE238BD12074206F00CD04DD /* ios_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ios_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE238BD12074206F00CD04DD /* sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE238BD42074206F00CD04DD /* ios_sdk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ios_sdk.h; sourceTree = "<group>"; };
 		CE238BD52074206F00CD04DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE238BDA2074206F00CD04DD /* ios-sdkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-sdkTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE238BDA2074206F00CD04DD /* sdkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sdkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE238BDF2074206F00CD04DD /* ios_sdkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_sdkTests.swift; sourceTree = "<group>"; };
 		CE238BE12074206F00CD04DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE238C262074321700CD04DD /* Instrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
@@ -67,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE238BDB2074206F00CD04DD /* ios_sdk.framework in Frameworks */,
+				CE238BDB2074206F00CD04DD /* sdk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,8 +94,8 @@
 		CE238BD22074206F00CD04DD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CE238BD12074206F00CD04DD /* ios_sdk.framework */,
-				CE238BDA2074206F00CD04DD /* ios-sdkTests.xctest */,
+				CE238BD12074206F00CD04DD /* sdk.framework */,
+				CE238BDA2074206F00CD04DD /* sdkTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -160,9 +160,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		CE238BD02074206F00CD04DD /* ios-sdk */ = {
+		CE238BD02074206F00CD04DD /* sdk */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CE238BE52074206F00CD04DD /* Build configuration list for PBXNativeTarget "ios-sdk" */;
+			buildConfigurationList = CE238BE52074206F00CD04DD /* Build configuration list for PBXNativeTarget "sdk" */;
 			buildPhases = (
 				CE238BCC2074206F00CD04DD /* Sources */,
 				CE238BCD2074206F00CD04DD /* Frameworks */,
@@ -173,14 +173,14 @@
 			);
 			dependencies = (
 			);
-			name = "ios-sdk";
+			name = sdk;
 			productName = "ios-sdk";
-			productReference = CE238BD12074206F00CD04DD /* ios_sdk.framework */;
+			productReference = CE238BD12074206F00CD04DD /* sdk.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		CE238BD92074206F00CD04DD /* ios-sdkTests */ = {
+		CE238BD92074206F00CD04DD /* sdkTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CE238BE82074206F00CD04DD /* Build configuration list for PBXNativeTarget "ios-sdkTests" */;
+			buildConfigurationList = CE238BE82074206F00CD04DD /* Build configuration list for PBXNativeTarget "sdkTests" */;
 			buildPhases = (
 				CE238BD62074206F00CD04DD /* Sources */,
 				CE238BD72074206F00CD04DD /* Frameworks */,
@@ -191,9 +191,9 @@
 			dependencies = (
 				CE238BDD2074206F00CD04DD /* PBXTargetDependency */,
 			);
-			name = "ios-sdkTests";
+			name = sdkTests;
 			productName = "ios-sdkTests";
-			productReference = CE238BDA2074206F00CD04DD /* ios-sdkTests.xctest */;
+			productReference = CE238BDA2074206F00CD04DD /* sdkTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -215,7 +215,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CE238BCB2074206F00CD04DD /* Build configuration list for PBXProject "ios-sdk" */;
+			buildConfigurationList = CE238BCB2074206F00CD04DD /* Build configuration list for PBXProject "sdk" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -227,8 +227,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CE238BD02074206F00CD04DD /* ios-sdk */,
-				CE238BD92074206F00CD04DD /* ios-sdkTests */,
+				CE238BD02074206F00CD04DD /* sdk */,
+				CE238BD92074206F00CD04DD /* sdkTests */,
 			);
 		};
 /* End PBXProject section */
@@ -283,7 +283,7 @@
 /* Begin PBXTargetDependency section */
 		CE238BDD2074206F00CD04DD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CE238BD02074206F00CD04DD /* ios-sdk */;
+			target = CE238BD02074206F00CD04DD /* sdk */;
 			targetProxy = CE238BDC2074206F00CD04DD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -428,7 +428,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "finixpayments.ios-sdk";
+				PRODUCT_BUNDLE_IDENTIFIER = finixpayments.ios;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -457,7 +457,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "finixpayments.ios-sdk";
+				PRODUCT_BUNDLE_IDENTIFIER = finixpayments.ios;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -505,7 +505,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CE238BCB2074206F00CD04DD /* Build configuration list for PBXProject "ios-sdk" */ = {
+		CE238BCB2074206F00CD04DD /* Build configuration list for PBXProject "sdk" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE238BE32074206F00CD04DD /* Debug */,
@@ -514,7 +514,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CE238BE52074206F00CD04DD /* Build configuration list for PBXNativeTarget "ios-sdk" */ = {
+		CE238BE52074206F00CD04DD /* Build configuration list for PBXNativeTarget "sdk" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE238BE62074206F00CD04DD /* Debug */,
@@ -523,7 +523,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CE238BE82074206F00CD04DD /* Build configuration list for PBXNativeTarget "ios-sdkTests" */ = {
+		CE238BE82074206F00CD04DD /* Build configuration list for PBXNativeTarget "sdkTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE238BE92074206F00CD04DD /* Debug */,
