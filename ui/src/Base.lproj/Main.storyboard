@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="XI1-ZR-QJH">
             <objects>
-                <tableViewController id="3VD-G4-Zef" customClass="ViewController" customModule="ios_example_sdk_ui" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="3VD-G4-Zef" customClass="ViewController" customModule="ui" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="egL-lk-Z7j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -132,7 +132,7 @@
                                                     <rect key="frame" x="16" y="7" width="343" height="30"/>
                                                     <state key="normal" title="Submit"/>
                                                     <connections>
-                                                        <action selector="submitBtn:" destination="3VD-G4-Zef" eventType="touchUpInside" id="JPB-rY-s7j"/>
+                                                        <action selector="submitBtn:" destination="3VD-G4-Zef" eventType="touchUpInside" id="hs6-kf-CEp"/>
                                                     </connections>
                                                 </button>
                                             </subviews>

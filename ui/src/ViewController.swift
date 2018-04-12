@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import ios_sdk
+import sdk
 
 class ViewController: UITableViewController {
     
@@ -23,7 +23,8 @@ class ViewController: UITableViewController {
     @IBOutlet weak var lblTokenExpires: UILabel!
     @IBOutlet weak var lblTokenCurrency: UILabel!
     
-    let finixAPI = FinixAPI(host: "api-staging.finix.io", applicationId: "AP2kL9QSWYJGpuAtYYnK5cZY")
+    let api = PaymentsSDK(host: "api-staging.finix.io", applicationId: "AP2kL9QSWYJGpuAtYYnK5cZY")
+    
     let app : AppDelegate = UIApplication.shared.delegate as! AppDelegate
     let expirationPredicate = NSPredicate(format:"SELF MATCHES %@", "^[0-9]{2}\\/[0-9]{4}")
     
@@ -38,7 +39,7 @@ class ViewController: UITableViewController {
     @IBAction func submitBtn(_ sender: Any) {
         do {
             //Call the SDK to tokenize a payment instrument
-            finixAPI.tokenize(instrument: try buildInstrumentFromForm()) { (token, error) in
+            api.tokenize(instrument: try buildInstrumentFromForm()) { (token, error) in
                 if let token = token {
                     self.setView(token: token)
                 } else if let error = error {

@@ -13,7 +13,8 @@
 		CE238BFD207420A100CD04DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE238BFB207420A100CD04DD /* Main.storyboard */; };
 		CE238BFF207420A100CD04DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE238BFE207420A100CD04DD /* Assets.xcassets */; };
 		CE238C02207420A100CD04DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE238C00207420A100CD04DD /* LaunchScreen.storyboard */; };
-		CE238C0D207420A200CD04DD /* ios_example_sdk_uiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE238C0C207420A200CD04DD /* ios_example_sdk_uiTests.swift */; };
+		CE238C0D207420A200CD04DD /* uiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE238C0C207420A200CD04DD /* uiTests.swift */; };
+		CE933EEF2080113100622F70 /* sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE933EEE2080113100622F70 /* sdk.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,9 +50,9 @@
 		CE238C01207420A100CD04DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE238C03207420A100CD04DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE238C08207420A200CD04DD /* uiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = uiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE238C0C207420A200CD04DD /* ios_example_sdk_uiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_example_sdk_uiTests.swift; sourceTree = "<group>"; };
+		CE238C0C207420A200CD04DD /* uiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uiTests.swift; sourceTree = "<group>"; };
 		CE238C0E207420A200CD04DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE933EDA207FB4F900622F70 /* ios_sdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ios_sdk.framework; path = "../../../Library/Developer/Xcode/DerivedData/finix-ios-sdk-deoxxugtqleoeehjqcehycrpsgyp/Build/Products/Debug-iphoneos/ios_sdk.framework"; sourceTree = "<group>"; };
+		CE933EEE2080113100622F70 /* sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE933EEF2080113100622F70 /* sdk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,7 +77,7 @@
 		CE1D5FA62076BC280060FF7A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CE933EDA207FB4F900622F70 /* ios_sdk.framework */,
+				CE933EEE2080113100622F70 /* sdk.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -116,7 +118,7 @@
 		CE238C0B207420A200CD04DD /* tests */ = {
 			isa = PBXGroup;
 			children = (
-				CE238C0C207420A200CD04DD /* ios_example_sdk_uiTests.swift */,
+				CE238C0C207420A200CD04DD /* uiTests.swift */,
 				CE238C0E207420A200CD04DD /* Info.plist */,
 			);
 			path = tests;
@@ -242,7 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE238C0D207420A200CD04DD /* ios_example_sdk_uiTests.swift in Sources */,
+				CE238C0D207420A200CD04DD /* uiTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,7 +446,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "finixpayments.ios-example-sdk-uiTests";
+				PRODUCT_BUNDLE_IDENTIFIER = uiTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -464,7 +466,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "finixpayments.ios-example-sdk-uiTests";
+				PRODUCT_BUNDLE_IDENTIFIER = uiTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
