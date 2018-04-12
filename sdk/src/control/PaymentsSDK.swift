@@ -20,11 +20,15 @@ public class PaymentsSDK {
         httpClient = HttpClient(hostFinixAPI: host)
     }
     
-    public func tokenize(instrument: Instrument, completion:((Token?, Error?) -> Void)?) throws {
-        guard let json = try self.encodeJSON(instrument) else {
-            throw SDKError.invalidJSON
+    public func tokenize(instrument: Instrument, completion:((Token?, Error?) -> Void)?) {
+        var json:Data? = nil
+        do {
+            json = try self.encodeJSON(instrument)
+        } catch {
+            completion?(nil,error)
         }
-        httpClient.post(to: path, data: json) { (data, error) in
+
+        httpClient.post(to: path, data: json!) { (data, error) in
             if let error = error {
                 completion?(nil,error)
             }
