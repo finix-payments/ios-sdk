@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct Embedded:Codable {
+struct Embedded: Codable {
     var errors : [APIError]
 }

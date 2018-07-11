@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Response:Codable {
+struct Response: Codable {
     public var id : String?
     var total: Int?
     var _embedded: Embedded?

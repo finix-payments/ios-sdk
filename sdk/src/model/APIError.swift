@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct APIError:Codable {
+struct APIError: Codable {
     var logref : String
     var message : String
     var code : String
