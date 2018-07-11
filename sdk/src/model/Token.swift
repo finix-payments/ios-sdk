@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Token:Codable {
+public struct Token: Codable {
     public var id : String
     public var fingerprint : String
     public var created_at : Date

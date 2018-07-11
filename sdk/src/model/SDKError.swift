@@ -8,7 +8,9 @@
 
 import Foundation
 
-public enum SDKError:Error {
+enum SDKError:Error {
+    case invalidExpiration
+    case invalidCardNumber
     case invalidURL
     case invalidNumber
     case invalidJSON
@@ -17,6 +19,10 @@ public enum SDKError:Error {
 extension SDKError: LocalizedError {
     public var errorDescription: String? {
         switch self {
+        case .invalidExpiration:
+            return NSLocalizedString("Invalid expiration date, must be in format mm/yyyy", comment: "Invalid Expiration")
+        case .invalidCardNumber:
+            return NSLocalizedString("Invalid card number", comment: "Invalid number")
         case .invalidNumber:
             return NSLocalizedString("Number is invalid", comment: "Number is invalid")
         case .invalidURL:

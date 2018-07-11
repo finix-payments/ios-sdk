@@ -5,6 +5,6 @@
       location = "group:ui/ui.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:sdk/sdk.xcodeproj">
+      location = "group:/Users/christopheraaron/Code/ios-sdk/sdk/FinixSDK.xcodeproj">
    </FileRef>
 </Workspace>

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class PaymentsSDK {
+public class FinixTokenizer {
 
     var httpClient : HttpClient
     var applicationsPath : String = "/applications/"
@@ -20,17 +20,30 @@ public class PaymentsSDK {
         httpClient = HttpClient(hostFinixAPI: host)
     }
     
-    public func tokenize(instrument: Instrument, completion:((Token?, Error?) -> Void)?) {
+    public func tokenize(expDate: String, cardNumber: String, completion:((Token?, Error?) -> Void)?) {
+        // creating instrument to tokenize data
+        var instrument = Instrument()
+        // taking validations away from user
+        if (!instrument.isExpDateValid(expDate: expDate)) {
+            completion?(nil, SDKError.invalidExpiration)
+            return
+        }
+        if (!instrument.isCardNumberValid(cardNumber: cardNumber)) {
+            completion?(nil, SDKError.invalidCardNumber)
+            return
+        }
         var json:Data? = nil
         do {
             json = try self.encodeJSON(instrument)
         } catch {
             completion?(nil,error)
+            return
         }
-
+        
         httpClient.post(to: path, data: json!) { (data, error) in
             if let error = error {
                 completion?(nil,error)
+                return
             }
             if let data = data {
                 do {
@@ -46,6 +59,7 @@ public class PaymentsSDK {
                     }
                 } catch {
                     completion?(nil, SDKError.invalidJSON)
+                    
                 }
             }
         }
