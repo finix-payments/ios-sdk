@@ -1,2 +1,2 @@
 # ios-sdk
-SDK for tokenizing cards on iOS 
+Finix SDK for tokenizing cards on iOS 
