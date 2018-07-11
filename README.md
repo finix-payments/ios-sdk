@@ -1,7 +1,7 @@
 # ios-sdk
 Finix SDK for tokenizing cards on iOS 
 
-1. import the Finix SDK the swift package manager
+1. add the Finix SDK 
 2. import the library into the file
 ```swift
 import FinixSDK
