@@ -12,6 +12,7 @@ let finixTokenizer = FinixTokenizer(host: "api-staging.finix.io", applicationId:
 finixTokenizer.tokenize(expDate: txtExpiration.text!, cardNumber: txtNumber.text!) { (response, error) in
         guard let token = token else {
             print(error.localizedDescription)
+            return
         } 
         print(token.id)
         print(token.fingerprint)
