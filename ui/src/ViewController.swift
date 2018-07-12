@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import sdk
+import FinixSDK
 
 class ViewController: UITableViewController {
     
@@ -23,7 +23,7 @@ class ViewController: UITableViewController {
     @IBOutlet weak var lblTokenExpires: UILabel!
     @IBOutlet weak var lblTokenCurrency: UILabel!
     
-    let api = PaymentsSDK(host: "api-staging.finix.io", applicationId: "AP2kL9QSWYJGpuAtYYnK5cZY")
+    let finixTokenizer = FinixTokenizer(host: "api-staging.finix.io", applicationId: "AP2kL9QSWYJGpuAtYYnK5cZY")
     
     let app : AppDelegate = UIApplication.shared.delegate as! AppDelegate
     let expirationPredicate = NSPredicate(format:"SELF MATCHES %@", "^[0-9]{2}\\/[0-9]{4}")
@@ -37,34 +37,14 @@ class ViewController: UITableViewController {
     }
 
     @IBAction func submitBtn(_ sender: Any) {
-        do {
-            //Call the SDK to tokenize a payment instrument
-            api.tokenize(instrument: try buildInstrumentFromForm()) { (token, error) in
-                if let token = token {
-                    self.setView(token: token)
-                } else if let error = error {
-                    self.displayError(error: error)
-                }
+        //Call the SDK to tokenize a payment instrument
+        finixTokenizer.tokenize(expDate: txtExpiration.text!, cardNumber: txtNumber.text!) { (token, error) in
+            guard let finixToken = token else {
+                self.displayError(error: error!)
+                return
             }
-        } catch {
-            displayError(error: UIError.invalidExpiration)
+            self.setView(token: finixToken)
         }
-    }
-    
-    //Extract form fields and build a payment instrument
-    func buildInstrumentFromForm() throws -> Instrument {
-        guard
-            let expirationStr = txtExpiration.text, //Extract the expiration string from the text box
-            expirationPredicate.evaluate(with: expirationStr), //Validate the expiration string has valid form
-            let expirationMonth = Int(String((expirationStr.prefix(2)))), //Extract the month from the string
-            let expirationYear = Int(String((expirationStr.suffix(4)))) //Extract the year from the string
-        else {
-            throw UIError.invalidExpiration
-        }
-        guard let number = txtNumber.text else {
-            throw UIError.invalidCardNumber
-        }
-        return Instrument(type: PaymentType.PAYMENT_CARD, number: number, expiration_month: expirationMonth, expiration_year: expirationYear)
     }
     
     //Set the view in the app
