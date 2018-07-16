@@ -19,14 +19,16 @@ struct Instrument: Codable {
     var tags : [String:String]?
     
     init() {
-        self.type = PaymentType.PAYMENT_CARD
+        
     }
     
-    mutating func isExpDateValid(expDate: String) -> Bool {
-        let expirationPredicate = NSPredicate(format:"SELF MATCHES %@", "^[0-9]{2}\\/[0-9]{4}")
-        if (expirationPredicate.evaluate(with: expDate)) {
-            self.expiration_month = Int(String((expDate.prefix(2))))
-            self.expiration_year = Int(String((expDate.suffix(4))))
+    mutating func isExpDateValid(expMonth: Int, expYear: Int) -> Bool {
+        let validMonth = expMonth > 0 && expMonth < 13
+        //1950 is the year the first credit card was issued
+        let validYear = expYear > 1950 && expYear < 2100
+        if (validMonth && validYear) {
+            self.expiration_month = expMonth
+            self.expiration_year = expYear
             return true
         }
         return false
