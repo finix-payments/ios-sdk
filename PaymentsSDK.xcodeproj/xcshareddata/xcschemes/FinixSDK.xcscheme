@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CE238BD02074206F00CD04DD"
-               BuildableName = "FinixSDK.framework"
-               BlueprintName = "FinixSDK"
-               ReferencedContainer = "container:FinixSDK.xcodeproj">
+               BuildableName = "PaymentsSDK.framework"
+               BlueprintName = "PaymentsSDK"
+               ReferencedContainer = "container:PaymentsSDK.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CE238BD92074206F00CD04DD"
-               BuildableName = "FinixSDKTests.xctest"
-               BlueprintName = "FinixSDKTests"
-               ReferencedContainer = "container:FinixSDK.xcodeproj">
+               BuildableName = "PaymentsSDKTests.xctest"
+               BlueprintName = "PaymentsSDKTests"
+               ReferencedContainer = "container:PaymentsSDK.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE238BD02074206F00CD04DD"
-            BuildableName = "FinixSDK.framework"
-            BlueprintName = "FinixSDK"
-            ReferencedContainer = "container:FinixSDK.xcodeproj">
+            BuildableName = "PaymentsSDK.framework"
+            BlueprintName = "PaymentsSDK"
+            ReferencedContainer = "container:PaymentsSDK.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -65,9 +65,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE238BD02074206F00CD04DD"
-            BuildableName = "FinixSDK.framework"
-            BlueprintName = "FinixSDK"
-            ReferencedContainer = "container:FinixSDK.xcodeproj">
+            BuildableName = "PaymentsSDK.framework"
+            BlueprintName = "PaymentsSDK"
+            ReferencedContainer = "container:PaymentsSDK.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -83,9 +83,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE238BD02074206F00CD04DD"
-            BuildableName = "FinixSDK.framework"
-            BlueprintName = "FinixSDK"
-            ReferencedContainer = "container:FinixSDK.xcodeproj">
+            BuildableName = "PaymentsSDK.framework"
+            BlueprintName = "PaymentsSDK"
+            ReferencedContainer = "container:PaymentsSDK.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
@@ -105,9 +105,9 @@
                   <BuildableReference
                      BuildableIdentifier = "primary"
                      BlueprintIdentifier = "CE238BD02074206F00CD04DD"
-                     BuildableName = "FinixSDK.framework"
-                     BlueprintName = "FinixSDK"
-                     ReferencedContainer = "container:FinixSDK.xcodeproj">
+                     BuildableName = "PaymentsSDK.framework"
+                     BlueprintName = "PaymentsSDK"
+                     ReferencedContainer = "container:PaymentsSDK.xcodeproj">
                   </BuildableReference>
                </EnvironmentBuildable>
             </ActionContent>

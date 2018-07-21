@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class FinixTokenizer {
+public class Tokenizer {
 
     var httpClient : HttpClient
     var applicationsPath : String = "/applications/"
@@ -20,7 +20,7 @@ public class FinixTokenizer {
         httpClient = HttpClient(hostFinixAPI: host)
     }
     
-    public func tokenize(cardNumber: String, paymentType : PaymentType, expMonth: Int, expYear: Int, completion:((Token?, Error?) -> Void)?) {
+    public func createToken(cardNumber: String, paymentType : PaymentType, expMonth: Int, expYear: Int, completion:((Token?, Error?) -> Void)?) {
         // creating instrument to tokenize data
         var instrument = Instrument()
         instrument.type = PaymentType.PAYMENT_CARD
