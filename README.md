@@ -1,7 +1,7 @@
 
 # ios-sdk
 
-1. import the Payments SDK with with cocoapods by adding `pod 'PaymentsSDK', '~> 1.0.0'` to the Podfile
+1. import the Payments SDK with with cocoapods by adding `pod 'PaymentsSDK', '~> 1.0.4'` to the Podfile
 2. import the library into the file
 ```swift
 import PaymentsSDK
