@@ -20,12 +20,12 @@ public class Tokenizer {
         httpClient = HttpClient(hostFinixAPI: host)
     }
     
-    public func createToken(cardNumber: String, paymentType : PaymentType, expMonth: Int, expYear: Int, completion:((Token?, Error?) -> Void)?) {
+    public func createToken(cardNumber: String, paymentType : PaymentType, expirationMonth: Int, expirationYear: Int, completion:((Token?, Error?) -> Void)?) {
         // creating instrument to tokenize data
         var instrument = Instrument()
         instrument.type = PaymentType.PAYMENT_CARD
         // taking validations away from user
-        if (!instrument.isExpDateValid(expMonth: expMonth, expYear: expYear)) {
+        if (!instrument.isExpDateValid(expirationMonth: expirationMonth, expirationYear: expirationYear)) {
             completion?(nil, SDKError.invalidExpiration)
             return
         }

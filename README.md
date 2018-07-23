@@ -1,7 +1,7 @@
 
 # ios-sdk
 
-1. import the Payments SDK with with cocoapods by adding `pod 'PaymentsSDK', '~> 1.0.4'` to the Podfile
+1. import the Payments SDK with with cocoapods by adding `pod 'PaymentsSDK', '~> 1.0.7'` to the Podfile
 2. import the library into the file
 ```swift
 import PaymentsSDK
@@ -10,7 +10,7 @@ import PaymentsSDK
 ```swift 
 // paymentType parameter can be added with the public enum PaymentType from the library
 let tokenizer = Tokenizer(host: "api-staging.finix.io", applicationId: "AP2kL9QSWYJGpuAtYYnK5cZY")
-tokenizer.createToken(cardNumber: txtNumber.text!, paymentType: PaymentType.PAYMENT_CARD, expMonth: 12, expYear: 2021) { (token, error) in
+tokenizer.createToken(cardNumber: txtNumber.text!, paymentType: PaymentType.PAYMENT_CARD, expirationMonth: 12, expirationYear: 2021) { (token, error) in
         guard let token = token else {
             print(error!.localizedDescription)
             return
