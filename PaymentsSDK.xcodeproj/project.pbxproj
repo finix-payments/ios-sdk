@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		CE1D5F9C207548C40060FF7A /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D5F9B207548C40060FF7A /* Address.swift */; };
 		CE1D5F9E20754ABF0060FF7A /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D5F9D20754ABF0060FF7A /* Token.swift */; };
-		CE1D5FA520757EEE0060FF7A /* FinixTokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D5FA420757EEE0060FF7A /* FinixTokenizer.swift */; };
+		CE1D5FA520757EEE0060FF7A /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D5FA420757EEE0060FF7A /* Tokenizer.swift */; };
 		CE1DF29E2077D1B100BAC880 /* PaymentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DF29D2077D1B100BAC880 /* PaymentType.swift */; };
 		CE1DF2A0207802F100BAC880 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DF29F207802F100BAC880 /* Response.swift */; };
 		CE1DF2A2207805BD00BAC880 /* Embedded.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DF2A1207805BD00BAC880 /* Embedded.swift */; };
@@ -39,17 +39,17 @@
 /* Begin PBXFileReference section */
 		CE1D5F9B207548C40060FF7A /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		CE1D5F9D20754ABF0060FF7A /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
-		CE1D5FA420757EEE0060FF7A /* FinixTokenizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinixTokenizer.swift; sourceTree = "<group>"; };
+		CE1D5FA420757EEE0060FF7A /* Tokenizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tokenizer.swift; sourceTree = "<group>"; };
 		CE1DF29D2077D1B100BAC880 /* PaymentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentType.swift; sourceTree = "<group>"; };
 		CE1DF29F207802F100BAC880 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		CE1DF2A1207805BD00BAC880 /* Embedded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Embedded.swift; sourceTree = "<group>"; };
 		CE1DF2A32078060A00BAC880 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		CE1DF2A520780CF000BAC880 /* SDKError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKError.swift; sourceTree = "<group>"; };
 		CE1DF2A920784A2800BAC880 /* HttpClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientError.swift; sourceTree = "<group>"; };
-		CE238BD12074206F00CD04DD /* FinixSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FinixSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE238BD12074206F00CD04DD /* PaymentsSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PaymentsSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE238BD42074206F00CD04DD /* FinixSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FinixSDK.h; sourceTree = "<group>"; };
 		CE238BD52074206F00CD04DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE238BDA2074206F00CD04DD /* FinixSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinixSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE238BDA2074206F00CD04DD /* PaymentsSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaymentsSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE238BDF2074206F00CD04DD /* ConfigTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigTests.swift; sourceTree = "<group>"; };
 		CE238BE12074206F00CD04DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE238C262074321700CD04DD /* Instrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 		CE1D5F9F20756A400060FF7A /* control */ = {
 			isa = PBXGroup;
 			children = (
-				CE1D5FA420757EEE0060FF7A /* FinixTokenizer.swift */,
+				CE1D5FA420757EEE0060FF7A /* Tokenizer.swift */,
 				CE238C2D20743C2F00CD04DD /* Config.swift */,
 			);
 			path = control;
@@ -99,8 +99,8 @@
 		CE238BD22074206F00CD04DD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CE238BD12074206F00CD04DD /* FinixSDK.framework */,
-				CE238BDA2074206F00CD04DD /* FinixSDKTests.xctest */,
+				CE238BD12074206F00CD04DD /* PaymentsSDK.framework */,
+				CE238BDA2074206F00CD04DD /* PaymentsSDKTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -191,9 +191,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		CE238BD02074206F00CD04DD /* FinixSDK */ = {
+		CE238BD02074206F00CD04DD /* PaymentsSDK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CE238BE52074206F00CD04DD /* Build configuration list for PBXNativeTarget "FinixSDK" */;
+			buildConfigurationList = CE238BE52074206F00CD04DD /* Build configuration list for PBXNativeTarget "PaymentsSDK" */;
 			buildPhases = (
 				CE238BCC2074206F00CD04DD /* Sources */,
 				CE238BCD2074206F00CD04DD /* Frameworks */,
@@ -204,14 +204,14 @@
 			);
 			dependencies = (
 			);
-			name = FinixSDK;
+			name = PaymentsSDK;
 			productName = "ios-sdk";
-			productReference = CE238BD12074206F00CD04DD /* FinixSDK.framework */;
+			productReference = CE238BD12074206F00CD04DD /* PaymentsSDK.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		CE238BD92074206F00CD04DD /* FinixSDKTests */ = {
+		CE238BD92074206F00CD04DD /* PaymentsSDKTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CE238BE82074206F00CD04DD /* Build configuration list for PBXNativeTarget "FinixSDKTests" */;
+			buildConfigurationList = CE238BE82074206F00CD04DD /* Build configuration list for PBXNativeTarget "PaymentsSDKTests" */;
 			buildPhases = (
 				CE238BD62074206F00CD04DD /* Sources */,
 				CE238BD72074206F00CD04DD /* Frameworks */,
@@ -222,9 +222,9 @@
 			dependencies = (
 				CE238BDD2074206F00CD04DD /* PBXTargetDependency */,
 			);
-			name = FinixSDKTests;
+			name = PaymentsSDKTests;
 			productName = "ios-sdkTests";
-			productReference = CE238BDA2074206F00CD04DD /* FinixSDKTests.xctest */;
+			productReference = CE238BDA2074206F00CD04DD /* PaymentsSDKTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -234,7 +234,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0940;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Finix Payments, Inc.";
 				TargetAttributes = {
 					CE238BD02074206F00CD04DD = {
@@ -246,7 +246,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CE238BCB2074206F00CD04DD /* Build configuration list for PBXProject "FinixSDK" */;
+			buildConfigurationList = CE238BCB2074206F00CD04DD /* Build configuration list for PBXProject "PaymentsSDK" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -259,8 +259,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CE238BD02074206F00CD04DD /* FinixSDK */,
-				CE238BD92074206F00CD04DD /* FinixSDKTests */,
+				CE238BD02074206F00CD04DD /* PaymentsSDK */,
+				CE238BD92074206F00CD04DD /* PaymentsSDKTests */,
 			);
 		};
 /* End PBXProject section */
@@ -298,7 +298,7 @@
 				CE1DF29E2077D1B100BAC880 /* PaymentType.swift in Sources */,
 				CE238C2E20743C2F00CD04DD /* Config.swift in Sources */,
 				CE1DF2A42078060A00BAC880 /* APIError.swift in Sources */,
-				CE1D5FA520757EEE0060FF7A /* FinixTokenizer.swift in Sources */,
+				CE1D5FA520757EEE0060FF7A /* Tokenizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +318,7 @@
 /* Begin PBXTargetDependency section */
 		CE238BDD2074206F00CD04DD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CE238BD02074206F00CD04DD /* FinixSDK */;
+			target = CE238BD02074206F00CD04DD /* PaymentsSDK */;
 			targetProxy = CE238BDC2074206F00CD04DD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -376,12 +376,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -433,11 +434,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -448,7 +450,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 5Q5G9PV6WL;
@@ -464,8 +466,8 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = finixpayments.ios;
-				PRODUCT_MODULE_NAME = FinixSDK;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_MODULE_NAME = PaymentsSDK;
+				PRODUCT_NAME = PaymentsSDK;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = NO;
 				SWIFT_MODULE_NAME = FinixSDK;
@@ -479,7 +481,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 5Q5G9PV6WL;
@@ -495,8 +497,8 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = finixpayments.ios;
-				PRODUCT_MODULE_NAME = FinixSDK;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_MODULE_NAME = PaymentsSDK;
+				PRODUCT_NAME = PaymentsSDK;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = NO;
 				SWIFT_MODULE_NAME = FinixSDK;
@@ -544,7 +546,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CE238BCB2074206F00CD04DD /* Build configuration list for PBXProject "FinixSDK" */ = {
+		CE238BCB2074206F00CD04DD /* Build configuration list for PBXProject "PaymentsSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE238BE32074206F00CD04DD /* Debug */,
@@ -553,7 +555,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CE238BE52074206F00CD04DD /* Build configuration list for PBXNativeTarget "FinixSDK" */ = {
+		CE238BE52074206F00CD04DD /* Build configuration list for PBXNativeTarget "PaymentsSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE238BE62074206F00CD04DD /* Debug */,
@@ -562,7 +564,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CE238BE82074206F00CD04DD /* Build configuration list for PBXNativeTarget "FinixSDKTests" */ = {
+		CE238BE82074206F00CD04DD /* Build configuration list for PBXNativeTarget "PaymentsSDKTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE238BE92074206F00CD04DD /* Debug */,
