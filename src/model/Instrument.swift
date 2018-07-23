@@ -22,13 +22,13 @@ struct Instrument: Codable {
         
     }
     
-    mutating func isExpDateValid(expMonth: Int, expYear: Int) -> Bool {
-        let validMonth = expMonth > 0 && expMonth < 13
+    mutating func isExpDateValid(expirationMonth: Int, expirationYear: Int) -> Bool {
+        let validMonth = expirationMonth > 0 && expirationMonth < 13
         //1950 is the year the first credit card was issued
-        let validYear = expYear > 1950 && expYear < 2100
+        let validYear = expirationYear > 1950 && expirationYear < 2100
         if (validMonth && validYear) {
-            self.expiration_month = expMonth
-            self.expiration_year = expYear
+            self.expiration_month = expirationMonth
+            self.expiration_year = expirationYear
             return true
         }
         return false

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|  
     s.name              = 'PaymentsSDK'
-    s.version           = '1.0.4'
+    s.version           = '1.0.5'
     s.summary           = 'Payments sdk for tokenization.'
     s.homepage          = 'https://github.com/finix-payments/ios-sdk'
 
